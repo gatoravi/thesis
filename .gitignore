@@ -149,3 +149,5 @@ TSWLatexianTemp*
 # R
 .Rhistory
 packrat/lib*/
+# Mac
+.DS_Store
