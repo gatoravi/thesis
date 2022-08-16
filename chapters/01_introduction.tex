@@ -1,135 +1,49 @@
-\chapter{Dissertation or Thesis Format}
-\label{chap:dissertation-format}
+\chapter{Introduction}
+\label{chap:introduction}
+\tightlists
 
-The following guidelines offer you some degree of flexibility in formatting your thesis or dissertation.
-Whichever options you choose to use, you must use them consistently throughout the document.
+Over the past few decades we have made huge advances in sequencing genomes. We now have  comprehensive catalogs of common and rare variation in humans and a few other species. These results have encouraged pursuits in synthetic biology and precision medicine. However, these pursuits have exposed the reality that we are still limited in our understanding of how genomic sequences reliably specify function. 
 
-\section{Margins}
+We now know that genetically identical cells grown in the same environment express different amounts of the same gene. Cell-to-cell variability has been shown to be functionally important. For example, individual cells in a population of stem cells differ in their differentiation potential \cite{chang_transcriptome-wide_2008}. When cells with the same genotype behave differently, this limits our ability to design drugs to target diseased cells and hinders our ability to design synthetic biological circuits that perform reliably over a period of time \cite{elowitz_synthetic_2000}. In order to understand biological systems, we need to understand the sources and extent of this cell-to-cell variability.
 
-Your printed output must reflect physically measurable top, bottom, left, and right margins of 1 inch.
-Some systems' settings produce varying results when printing to different printers, so be sure to measure your output.
-Remember, nothing, not even page numbers, should print in the margins.
-
-\section{Page Numbers}
-
-All pages numbers should be placed on the center of each page immediately above the bottom margin.
-Number all pages in your document except for the title page and the optional copyright page which might follow the title page.
-Number the ``front matter'' pages (i.e., the pages that come prior to the main body of text, prior to chapter 1) with lowercase roman numerals, starting with ii (remember, the title page is counted but not numbered, and the copyright page is neither counted nor numbered).
-The body of the dissertation or thesis should be numbered with Arabic numerals starting with 1 and should begin on the epigraph page (optional), the introduction, if one is used, or on the first page of the first chapter.
-Options are summarized in \tref{tab:include} on page two.
-
-\section{Text}
-
-This template uses a 12-point, Times New Roman font throughout and is recommended for your dissertation or thesis.
-However, should you choose to use a different font, you should match the font size as close as possible.
-Use double-spacing for body text.
-Use either left justification with a ragged right edge or full justification.
-
-\section{Chapter Titles}
-
-Begin each chapter on a new page.
-You may start the chapter title below the top margin or you may leave some space and start the chapter title up to 3 inches from the top edge of the page.
-The font size for chapter titles should be no larger than 24.
-There are two options for formatting the chapter title:
-
-\begin{enumerate}
-	\item Type the word ``Chapter'' followed by the chapter number, skip a line, and type the chapter title on the following line; or
-	\item Type the chapter number followed by the chapter title, all on the same line.
-\end{enumerate}
-
-\section{Section Headings \& Numbering}
-
-Headings may be typed above or on the same line as the sections they label.
-Type the chapter number and section number before the section title.
-The font size for section headings should be no larger than 18.
-
-\subsection{Subsection Headings \& Numbering}
-\label{subsec:subsection-headings-numbering}
-
-This should follow the usual convention of your discipline and be acceptable to your committee; if your discipline calls for them they must be in included in the table of contents.
-Type the chapter number, section number and subsection number before the subsection title.
-The font size for subsection headings should be no larger than 14.
-
-\subsubsection{Headings for Divisions Smaller than Subsections}
-
-Do not number headings for divisions smaller than subsections.
-These are not included in the table of contents.
-Headings may be typed above or on the same line as the sections they label.
-Divisions smaller than subsections should be the same font size as the body text.
-
-\section{Figures and Tables}
-
-There are two options for numbering your figures and tables; choose one and be consistent in its use throughout your document.
-In either case, the name and description of the figure or table should be single spaced and can be a smaller font size.
-
-\begin{enumerate}
-	\item Maintain a separate numbering sequence for your list of figures and list of tables.
-Label figures with the word ``Figure'' and tables with the word ``Table''; or
-	\item Label both figures and tables with the word ``Figure'' and maintain one numbering sequence.
-\end{enumerate}
-
-Place figures and tables as close to their reference in the text as possible.
-Do not let figures or tables spill out into the margins.
-
-\begin{enumerate}
-	\item Place the figure number and title below each figure (or table labeled as a figure).
-	\item Place the table number and title above each table labeled as a table.
-\end{enumerate}
-
-\begin{figure}
-    \includegraphics{figures/just-a-figure}
-    \captionstyle{\raggedright}
-    \caption[Left justified figure]{You can left justify your figure.}
-    \label{fig:left-justified}
-\end{figure}
-
-\begin{figure}
-    \centering
-    \includegraphics{figures/just-a-figure}
-    \caption[Centered figure]{You can center your figure.}
-    \label{fig:centered}
-\end{figure}
+Work done in the previous decade using two copy reporters in E. Coli \cite{elowitz_stochastic_2002} and Yeast \cite{raser_control_2004} showed that cell-to-cell variability of gene expression is prevalent. To date, most of the work in understanding cell-to-cell variability has been done using reporters attached to a single gene or a few genes. How much of the variability at one locus is shared across different genes in the genome is still not well understood. I will address this question in *Aim 1*.
 
 
-\section{Lists}
 
-You may include lettered, numbered, or bulleted lists in your document.
-Use consistent punctuation and capitalization throughout each list.
-Lists may be indented.
+/subsection{Background}
 
-\section{Footnotes and Endnotes}
+/subsection{Gene expression variability exists amongst cells}
 
-You may use footnotes or endnotes for brief notes that are not appropriate for the body of the text.\footnote{The use of endnotes and footnotes should follow the usual convention of your discipline and be acceptable to your committee.}
-Use either footnotes or endnotes consistently throughout your dissertation or thesis.
-Endnotes are positioned at the end of each chapter.
-Single-space within each footnote or endnote.
-Footnotes should be numbered consecutively within a chapter; numbers should restart with each new chapter.
-Endnotes should be numbered consecutively through the entire body of your dissertation or thesis.
+Gene expression is the result of probabilistic interactions between molecules in the cell. These molecules include the two copies of DNA, transcription factors, RNA polymerase amongst others. The low numbers of molecules involved in transcription results in  variable gene expression across cells and time. It is still a mystery how in the presence of these gene expression fluctuations biological systems function in an orderly manner.
 
-\section{Quotations}
+The phenomenon of variability between cells is not new. Novick and Weiner \cite{novick_enzyme_1957} \cite{raj_nature_2008} described a phenonmenon in 1957 where given a population of E. Coli, the fraction of cells that produce beta galactidase is not deterministic. This fraction is stochastic and varies with the concentration of the inducer. The increase in the concentration of inducer only increases the chance that a bacterium produces beta galactidase. Given a fixed concentration of the inducer, it is not possible to predict with certainty if a single bacterium will produce beta galactidase but it is possible to estimate the probability of this event.
 
-You must use quotation marks and parenthetical references to indicate words that are not your own.
-Put quotation marks around short quotes.
-Put long quotes in separate single-spaced paragraphs, indented up to 1 inch from the left margin (these are called block quotations).
-Kate Turabian, editor of official publications and dissertation secretary at the University of Chicago for over 25 years, distinguishes short and long quotes as follows:
+In 2002, Elowitz et al.  \cite{elowitz_stochastic_2002} showed using two-colored reporters in E. Coli that identical genes on two different chromosomes show cell-to-cell variability in expression. The authors decomposed this variability into two components. The first is intrinsic noise that is specific to a locus. Intrinsic noise is due to the local interactions of molecules involved in transcription at a locus. These might include promoters switching between active and inactive states, proteins binding to enhancers, recruitment of RNA polymerase and so on. The second source of variability is extrinsic noise. Extrinsic noise is due to differences between cells in the cellular milieu. The cellular milieu can include upstream regulators of transcription such as transcription factor concentrations, number of ribosomes in the cell etc. These differences in the cellular environment is likely to affect the expression of multiple genes. Follow-up studies have now confirmed the observation that genetically identical cells in the same environment display variability in gene expression \cite{raser_control_2004; @blake_phenotypic_2006;@blake_noise_2003;@raser_noise_2005;@volfson_origins_2006}.
 
-\begin{quote}
-    Short, direct prose quotations should be incorporated into the text of the paper and enclosed in
-    double quotation marks: ``One small step for man; one giant leap for mankind.'' But in general a
-    prose quotation of two or more sentences which at the same time runs to four or more lines of
-    text in a paper should be set off from the text and indented in its
-    entirety \ldots\ \cite{Turabian}
-\end{quote}
+/subsection{Cell-to-Cell variability has been shown to be functionally important}
 
-\section{Equations}
+An increase in cell-to-cell variability in gene expression has been observed in cells undergoing differentiation. Richard et al.  \cite{richard_single-cell-based_2016} looked at a well-studied differentiation system of chicken erythroid progenitors differentiating into erythrocytes. The authors showed that chicken erythroid cells show an increase in variability of gene expression of relevant genes prior to differentiation. Similar results were obtained by Mojtahedi et al  \cite{mojtahedi_cell_2016} while studying the differentiation of murine heamatopoetic progenitor cells into myeloid or erythroid cells. The authors hypothesize that this surge in variability allows the cells to transition out of stable cell-states and transition to different cell-states. 
 
-Equation numbering and formatting should follow the usual convention of your discipline and be acceptable to your committee.
 
-Equations may be set in-line with the text or numbered and placed in separate paragraphs.
-Use the same numbering style for equations as you would for figures and tables.
-Here is an example of an equation set in-line with a paragraph: $E = mc^{2}$.
-Here is an example equation placed in a separate paragraph:
+Other examples have shown that genetically identical cells don't all reprogram at the same rate. Hanna and Saha et al. showed that reprogramming of somatic cells to iPSCs is stochastic with a random subset of initial cells completing reprogramming  \cite{hanna_direct_2009}. The authors showed that eventually all somatic cells reprogram to pluripotent stem cells when induced with transcription factors but the rate at which cells reprogram can be increased by increasing the cell-division rate. Similar stochasticity has been observed when fibroblasts were reprogrammed into induced endoderm progenitor cells \cite{biddy_single-cell_2018}.
 
-\begin{align}
-	E = mc^{2}
-\end{align}
+Variability in phenotype has also been shown to be functionally important at the organismal level. In C. elegans, two identical cells from different lineages known as alpha cells always give rise to exactly one ventral uterine progenitor cell and one anchor cell \cite{seydoux_cell_1989}. Both the alpha cells have the potential to generate either of the two downstream cell-types but the cell fate is decided in a stochastic and co-ordinated manner. This case is a well-studied model of a stochastic cell-fate decision where a robust outcome is produced as a result of a stochastic choice. In another example in C. elegans, mutations that cause incomplete penetrance have been shown to be due to increased variability in the expression of cell-fate determining genes  \cite{raj_variability_2010}.  The mutants display increased variability in the expression of a gene called *end-1*. Cells with high-levels of *end-1* are able to activate downstream targets in the intestinal fate specification network whereas the cells with low levels of *end-1* do not. In bacteria, individual bacterium often display a persistor phenotype and grow at slower rates by expressing different subsets of genes. This confers the bacteria an ability to survive adverse changes such as antibiotic treatment that might otherwise terminate a homogenous population \cite{veening_bet-hedging_2008}. In yeast, variability has been observed in the utilization of the sugar galactose. The Gal genes that are responsible for the metabolism of galactose pathway display a bimodal expression pattern \cite{acar_enhancement_2005}. This bimodality has been explained using stochastic modelling of the expression of genes in this pathway. These results all show how biological variability, arising from variability in gene expression, can have functional consequences. 
+
+/subsection{RNA sequencing allows detection of cell-state }
+
+RNA sequencing can be used as a readout of functional cell-states. A prominent example is the work by Chang et al.  \cite{chang_transcriptome-wide_2008}. Chang et al. isolated mouse heamatopoetic progenitors with different levels of a haematopoetic stem-cell marker Sca-1.  Sca1 expression showed reproducible variability across cells that was not just due to technical error in measurement. The authors used microarrays to show that cells with low amounts of Sca-1 had different transcriptomes compared to cells with low amounts of Sca-1. Furthermore, cells with higher levels of Sca-1 have an increased likelihood of differentiation towards the Myeloid lineage while cells with low amounts of Sca-1 are more prone to differentiate towards the Erythroid lineage. Similar examples have been observed for embryonic mouse cells with different amounts of a stem-cell marker Nanog \cite{kalmar_regulated_2009}. The authors showed that cells with low levels of Nanog exhibit increased variability in gene expression and are prone to differentiate.
+
+A well-studied example of cells in different cell-states is the cell-cycle. Cells in different stages of the cell-cycle express genes that are charaterestic of that stage. Single-cell RNA sequencing has been used to infer cell-cycle stage \cite{buettner_computational_2015;@leng_oscope_2015}. A recent study suggests that cell-cycle stage can now be inferred on a continuum  \cite{hsiao_characterizing_2019}. These results demonstrate that sequencing RNA can be used to identify cells in different cell-states.  \cite{trapnell_defining_2015;@shaffer_memory_2018;@sharma_chromatin-mediated_2010}
+
+/subsection{Modeling cell-state transitions}
+
+Computational modeling approaches are important to understand expression differences between single-cells. The single-cell RNA seq data gives us a static snapshot of a dynamic process. Every cell on a PCA plot is a summary of an enormous number of events. These cells are transitioning through different cell-types in a differentiating system or through different cell-states within a homogenous cell-type population. A commonly used approach to understand this dynamical process is to cluster cells with similar transcriptomes together. The predicted paths of cellular trajectories are inferred by drawing a principal curve through the cells. By correlating the expression patterns with known biology we can infer the processes active in these cells. \cite{trapnell_dynamics_2014}. Another recently developed method called RNA-velocity allows us to infer the near-term future transcriptome of cells. This is done by fitting a kinetic model to the ratio of spliced to unspliced transcripts of each gene. This allows the number of inferred transcript counts of different genes to be estimated. The inferred transcriptome is then plotted on a PCA or tSNE plot to infer the position where a given cell's transcriptome is headed.  \cite{@manno_rna_2018} Cell state transitions are often modeled as Markov processes \cite{stumpf_stem_2017}, the RNA-velocity approach can be used to infer transition rates in a Markov process. Using such computational models can help answer interesting questions. For example, we can try to understand the proportion of time cells spend in a cell-state or cell-type, how many cell-states can explain the observed data  \cite{chang_transcriptome-wide_2008}, what are the characteristic markers of different cell-types and what are the genes are driving cell-state transitions \cite{furchtgott_discovering_2017}.
+
+Most of the studies described above have looked at variability of reporters at a locus and compared it to the variability at other loci. We still need to understand if this variability is linked to cell-state and if the variability is shared among genes in a pathway. In a similar vein, most of the single-cell RNA sequencing approaches have been done to understand the variability between multiple cell-types. However, we still don't understand the sources and extent of the variability that exists within a single-cell type. This proposal tackles these two questions
+
+Recently single-cell sequencing studies have established that substantial variability in gene expression exists amongst different cell types. However, these studies have also shown that there is variability between cells of the same cell type. It is not well understood what are the sources of this variability. We need to understand if this variability is due to neutral drift in gene expression or if there are functional cell states within a cell-type.
+
+In the Chapter 2, using mammalian cell-lines, I will try to explain the sources of variability observed within a cell-type. I will test the hypothesis that cells of the same cell-type express different subsets of genes due to stochastic activation of upstream regulators. Specifically, I will test the hypothesis that stochastic expression of transcription factors and stochastic activation of signaling pathways leads to variability between cells of the same cell-type.
+
+The results of this project will thus help understand the sources and extent of cell-to-cell variability in gene expression. 
+\defaultlists
