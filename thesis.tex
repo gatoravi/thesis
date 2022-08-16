@@ -11,25 +11,27 @@
 % Enable refinements of typographics
 \usepackage[
     activate=true,
-    disable=false,  % enable microtype even in the draft mode
+    %disable=false,  % enable microtype even in the draft mode
     babel=true,     % enable language-specific kerning.
 ]{microtype}
-\DeclareMicrotypeAlias{Times New Roman}{ptm}
+%\DeclareMicrotypeAlias{Times New Roman}{ptm}
+% Tweak LaTeX line breaking
+\midsloppy
 
 % Hyperlinks
 \usepackage{hyperref}
 \hypersetup{%
     colorlinks=true,
     linkcolor=black,
-    urlcolor=blue,
-    citecolor=black,
+    urlcolor=[rgb]{0.0855,0.3675,0.5470},
+    citecolor=black%
 }
 % default URL style
 \urlstyle{same}
 
 % Tables (optional packages)
 \usepackage{threeparttable}
-\usepackage{makecell}  % allow multiple lines in a table cell
+%\usepackage{makecell}  % allow multiple lines in a table cell
 \usepackage{multirow}   % allow multiple lines in a table cell
 
 % Graphics
@@ -87,43 +89,33 @@
 
 
 % Configure title page
-\settitle{A Mock Thesis on the Proper Formatting of Dissertations and Theses for\\ Arts \& Sciences Graduate Students}
-\setauthor{Paige Turner}
+\settitle{Understanding the sources and consequences of cell-to-cell variability in gene expression}
+\setauthor{Avinash Ramu}
 \setthesistype{Dissertation}
 \setthesisdegree{Doctor of Philosophy}
 \setthesisdegreeabbrv{Ph.D.}
 % Degree officially earn date must be in December, May, or August
-\setdegreedatemy{May}{2017}
+\setdegreedatemy{May}{2023}
 \setthesisadvisorwithtitle{%
-    Professor Katherine Davidsen, Chair\\
-    Professor Michael Randolf, Co-Chair}
+    Professor Barak A Cohen, Chair}
 \setthesiscommittee{%
-    Katherine Davidsen, Chair\\
-    Michael Randolf, Co-Chair\\
-    Richard Lewis\\
-    Hillary O'Connell\\
-    Jack Taylor}
+    Barak A Cohen, Chair\\
+    Tim Schedl \\
+    Gary D. Stormo \\
+    Shankar Mukherji \\
+    Nathan O. Stitziel
+}
 \setthesisschool{Division of Biology and Biomedical Sciences}
-\setthesisdepartment{Neurosciences}
+\setthesisdepartment{Human and Statistical Genetics}
 
 
 % Configure PDF metadata
 \hypersetup{
     pdftitle={%
-        A Mock Thesis on the Proper Formatting of%
-        Dissertations and Theses for Arts \& Sciences Graduate Students%
+        Causes and consequences of cell-to-cell variability of gene expression.
     },
     pdfauthor={\thesisauthor},
 }
-
-
-% Optional packages that are not required in the real thesis
-\usepackage{layout}     % Show page layout
-\usepackage{pifont}     % Extra symbols (optional if the main font has the symbols)
-\usepackage{emoji}      % Emojis
-
-% Optional styling that is not required in the real thesis
-\newcommand*{\file}[1]{\texttt{#1}}
 
 
 \begin{document}
@@ -131,7 +123,7 @@
 \thetitlepage                       % Title page
 \frontmatter
 \thesiscopyright{%                  % Thesis copyright page
-    \textcopyright~\degreeearnyear, Paige Turner}
+    \textcopyright~\degreeearnyear, Avinash Ramu}
 
 \SingleSpacing*
 \setSingleSpace{1.15}
@@ -140,38 +132,24 @@
 \listoftables                       % List of tables (LoT)
 
 \DoubleSpacing
-\include{thesis-acknowledgments}    % Acknowledgements
+\include{acknowledgments}    % Acknowledgements
 \thesisdedication{%                 % Dedication page
-    Dedicated to my parents.}
-
-\begin{abstract}
-After removing these comments, begin typing the body of your abstract here, double-spaced.  Your
-font should be 12-point (which is the text of this sample paragraph). No part of the abstract
-should be bolded. If this is for your master's degree, be sure to change all occurrences of the word
-``dissertation'' to display as ``thesis,'' and change ``Doctor of Philosophy'' or ``Doctor of
-Liberal Arts'' to ``Master of Arts,'' ``Master of Liberal Arts,'' or ``Master of Fine Arts,''
-whichever applies.  In the abstract heading above, make sure you use the year your degree is to be
-officially earned. Be sure to use your full name as it is recorded in WebSTAC, your dissertation or
-thesis advisor's full name(s) wherever appropriate, and the correct title of your degree whenever
-referencing it.  The title of your degree will not always be the same as the title of your
-department or program, so please check with your departmental administrative assistant and
-advisor(s) to be sure you are using the correct degree title.  Please note that an abstract is
-required for all dissertation submissions in ProQuest. An abstract is optional for master's thesis
-submissions.
-\end{abstract}
+    To Alicia, Sky and Arjun.
+}
+\include{abstract}
 
 \mainmatter
 \pagestyle{main}
-\include{thesis-chapter-structure}
-\include{thesis-chapter-format}
-\include{thesis-chapter-latex}
+\include{chapters/00_example_chapter}
+\include{chapters/01_introduction}
+\include{chapters/02_hedgehog}
+\include{chapters/03_cas}
+\include{chapters/04_conclusion}
 
 \begin{SingleSpace}
-\nocite{*}
 \printbibliography
 \end{SingleSpace}
 
 \appendix
-\include{thesis-appendix-degree-program}
 
 \end{document}
