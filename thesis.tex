@@ -8,6 +8,9 @@
 \setxlvchars[\normalfont\normalsize]
 \checkandfixthelayout[classic]
 
+%Read ai files
+\usepackage{graphicx}
+\DeclareGraphicsRule{.ai}{pdf}{.ai}{}
 % Enable refinements of typographics
 \usepackage[
     activate=true,
@@ -36,8 +39,26 @@
 
 % for the degree
 \usepackage{gensymb}
+\let\dg\degree
 % Graphics
 \usepackage{graphicx}
+%forsuppfigure
+\usepackage{newfloat}
+\DeclareFloatingEnvironment[
+    fileext=lof,
+    name=Figure,
+    placement=tbhp,
+    within=chapter,
+]{suppfigure}
+\DeclareFloatingEnvironment[name={Supplementary Table},within=chapter,placement=tbhp,fileext=lsf,listname={List of Supplementary Tables}]{supptable} % Set up supplementary figures
+% Add newcommand to set up the numbering of supplementary figures and tables
+\newcommand{\beginsupplement}{%
+        \setcounter{table}{0}
+        \renewcommand{\thetable}{S\arabic{table}}%
+        \setcounter{figure}{0}
+        \renewcommand{\thefigure}{S\arabic{figure}}%
+}
+
 
 % Subcaptions
 % The caption format is "Figure 1. Some caption. (A) subcaption. (B) subcaption".
@@ -142,6 +163,7 @@
 
 \mainmatter
 \pagestyle{main}
+
 \include{chapters/01_introduction}
 \include{chapters/02_hedgehog}
 \include{chapters/03_cas}
