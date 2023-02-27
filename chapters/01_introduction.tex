@@ -4,14 +4,13 @@
 
 
 \subsection{Notes}
-- thesis is split into two sections, noise in a single reporter affectng phenotype and how is noise specified across different genes.
- - talk about Arjun's cancer papers
- - talk about sui huang papers
+- thesis is split into two sections, noise in a single reporter affecting phenotype and how is noise specified across different genes.
+- talk about Arjun's cancer papers
+- talk about sui huang papers
 
 
 CAS chapter - - sources of noise
 - include Roy Wollman's paper for the CAS chapter. 
-
     - Says that the cell-state explains most of the variance. Things like volume, differntiation state, cell cycle, amount and timing of Ca+2 activation.
 Variability and memory of protein levels in human cells - this argues that genes in the same pathway share variability.
 
@@ -38,17 +37,38 @@ The phenomenon of variability between cells is not new. Novick and Weiner \cite{
 
 In 2002, Elowitz et al.  \cite{elowitz_stochastic_2002} showed using two-colored reporters in E. Coli that identical genes on two different chromosomes show cell-to-cell variability in expression. The authors decomposed this variability into two components. The first is intrinsic noise that is specific to a locus. Intrinsic noise is due to the local interactions of molecules involved in transcription at a locus. These might include promoters switching between active and inactive states, proteins binding to enhancers, recruitment of RNA polymerase and so on. The second source of variability is extrinsic noise. Extrinsic noise is due to differences between cells in the cellular milieu. The cellular milieu can include upstream regulators of transcription such as transcription factor concentrations, number of ribosomes in the cell etc. These differences in the cellular environment is likely to affect the expression of multiple genes. Follow-up studies have now confirmed the observation that genetically identical cells in the same environment display variability in gene expression \cite{raser_control_2004,blake_phenotypic_2006,blake_noise_2003,raser_noise_2005,volfson_origins_2006}.
 
-\subsection{Cell-to-Cell variability has been shown to be functionally important}
+- need more paragraphs here
+- talk about arjun's fish work
+- talk about rob singer
+- talk about Dan larson
+- talk about Ido golding
 
+
+\subsection{Cell-to-Cell variability can result in functional differences}
 An increase in cell-to-cell variability in gene expression has been observed in cells undergoing differentiation. Richard et al.  \cite{richard_single-cell-based_2016} looked at a well-studied differentiation system of chicken erythroid progenitors differentiating into erythrocytes. The authors showed that chicken erythroid cells show an increase in variability of gene expression of relevant genes prior to differentiation. Similar results were obtained by Mojtahedi et al  \cite{mojtahedi_cell_2016} while studying the differentiation of murine heamatopoetic progenitor cells into myeloid or erythroid cells. The authors hypothesize that this surge in variability allows the cells to transition out of stable cell-states and transition to different cell-states. 
 
 
 Other examples have shown that genetically identical cells don't all reprogram at the same rate. Hanna and Saha et al. showed that reprogramming of somatic cells to iPSCs is stochastic with a random subset of initial cells completing reprogramming  \cite{hanna_direct_2009}. The authors showed that eventually all somatic cells reprogram to pluripotent stem cells when induced with transcription factors but the rate at which cells reprogram can be increased by increasing the cell-division rate. Similar stochasticity has been observed when fibroblasts were reprogrammed into induced endoderm progenitor cells \cite{biddy_single-cell_2018}.
 
-Variability in phenotype has also been shown to be functionally important at the organismal level. In C. elegans, two identical cells from different lineages known as alpha cells always give rise to exactly one ventral uterine progenitor cell and one anchor cell \cite{seydoux_cell_1989}. Both the alpha cells have the potential to generate either of the two downstream cell-types but the cell fate is decided in a stochastic and co-ordinated manner. This case is a well-studied model of a stochastic cell-fate decision where a robust outcome is produced as a result of a stochastic choice. In another example in C. elegans, mutations that cause incomplete penetrance have been shown to be due to increased variability in the expression of cell-fate determining genes  \cite{raj_variability_2010}.  The mutants display increased variability in the expression of a gene called *end-1*. Cells with high-levels of *end-1* are able to activate downstream targets in the intestinal fate specification network whereas the cells with low levels of *end-1* do not. In bacteria, individual bacterium often display a persistor phenotype and grow at slower rates by expressing different subsets of genes. This confers the bacteria an ability to survive adverse changes such as antibiotic treatment that might otherwise terminate a homogenous population \cite{veening_bet-hedging_2008}. In yeast, variability has been observed in the utilization of the sugar galactose. The Gal genes that are responsible for the metabolism of galactose pathway display a bimodal expression pattern \cite{acar_enhancement_2005}. This bimodality has been explained using stochastic modelling of the expression of genes in this pathway. These results all show how biological variability, arising from variability in gene expression, can have functional consequences. 
+Variability in phenotype has also been shown to be functionally important at the organismal level. In C. elegans, two identical cells from different lineages known as alpha cells always give rise to exactly one ventral uterine progenitor cell and one anchor cell \cite{seydoux_cell_1989}. Both the alpha cells have the potential to generate either of the two downstream cell-types but the cell fate is decided in a stochastic and co-ordinated manner. This case is a well-studied model of a stochastic cell-fate decision where a robust outcome is produced as a result of a stochastic choice. In another example in C. elegans, mutations that cause incomplete penetrance have been shown to be due to increased variability in the expression of cell-fate determining genes  \cite{raj_variability_2010}.  The mutants display increased variability in the expression of a gene called *end-1*. Cells with high-levels of *end-1* are able to activate downstream targets in the intestinal fate specification network whereas the cells with low levels of *end-1* do not. 
 
-\subsection{RNA sequencing allows detection of cell-state }
+In bacteria, individual bacterium often display a persistor phenotype and grow at slower rates by expressing different subsets of genes. This confers the bacteria an ability to survive adverse changes such as antibiotic treatment that might otherwise terminate a homogenous population \cite{veening_bet-hedging_2008}. In yeast, variability has been observed in the utilization of the sugar galactose. The Gal genes that are responsible for the metabolism of galactose pathway display a bimodal expression pattern \cite{acar_enhancement_2005}. This bimodality has been explained using stochastic modelling of the expression of genes in this pathway. These results all show how biological variability, arising from variability in gene expression, can have functional consequences. 
 
+- talk about Wernet2006
+- Talk about greenwald
+- Talk about Arjun's cells
+- Break teh paragraphs by in-vivo, fish, worm, cell-lines etc.
+
+\subsubsection{Selection on noise levels}
+- Talk about selction on noise
+
+
+\subsection{Single-cell RNA sequencing allows detection of cell-to-cell variability }
+
+- advent of single-cell rnaq-seq
+- talk about trajectory analysis
+- talk about noise using scRNAseq
+- talk about reprogramming inefficiency
 RNA sequencing can be used as a readout of functional cell-states. A prominent example is the work by Chang et al.  \cite{chang_transcriptome-wide_2008}. Chang et al. isolated mouse heamatopoetic progenitors with different levels of a haematopoetic stem-cell marker Sca-1.  Sca1 expression showed reproducible variability across cells that was not just due to technical error in measurement. The authors used microarrays to show that cells with low amounts of Sca-1 had different transcriptomes compared to cells with low amounts of Sca-1. Furthermore, cells with higher levels of Sca-1 have an increased likelihood of differentiation towards the Myeloid lineage while cells with low amounts of Sca-1 are more prone to differentiate towards the Erythroid lineage. Similar examples have been observed for embryonic mouse cells with different amounts of a stem-cell marker Nanog \cite{kalmar_regulated_2009}. The authors showed that cells with low levels of Nanog exhibit increased variability in gene expression and are prone to differentiate.
 
 A well-studied example of cells in different cell-states is the cell-cycle. Cells in different stages of the cell-cycle express genes that are charaterestic of that stage. Single-cell RNA sequencing has been used to infer cell-cycle stage \cite{buettner_computational_2015,leng_oscope_2015}. A recent study suggests that cell-cycle stage can now be inferred on a continuum  \cite{hsiao_characterizing_2019}. These results demonstrate that sequencing RNA can be used to identify cells in different cell-states.  \cite{trapnell_defining_2015,shaffer_memory_2018,sharma_chromatin-mediated_2010}
@@ -56,18 +76,21 @@ A well-studied example of cells in different cell-states is the cell-cycle. Cell
 \subsection{Modeling cell-state transitions}
 
 Computational modeling approaches are important to understand expression differences between single-cells. The single-cell RNA seq data gives us a static snapshot of a dynamic process. Every cell on a PCA plot is a summary of an enormous number of events. These cells are transitioning through different cell-types in a differentiating system or through different cell-states within a homogenous cell-type population. A commonly used approach to understand this dynamical process is to cluster cells with similar transcriptomes together. The predicted paths of cellular trajectories are inferred by drawing a principal curve through the cells. By correlating the expression patterns with known biology we can infer the processes active in these cells. \cite{trapnell_dynamics_2014}. Another recently developed method called RNA-velocity allows us to infer the near-term future transcriptome of cells. This is done by fitting a kinetic model to the ratio of spliced to unspliced transcripts of each gene. This allows the number of inferred transcript counts of different genes to be estimated. The inferred transcriptome is then plotted on a PCA or tSNE plot to infer the position where a given cell's transcriptome is headed.  \cite{manno_rna_2018} Cell state transitions are often modeled as Markov processes \cite{stumpf_stem_2017}, the RNA-velocity approach can be used to infer transition rates in a Markov process. Using such computational models can help answer interesting questions. For example, we can try to understand the proportion of time cells spend in a cell-state or cell-type, how many cell-states can explain the observed data  \cite{chang_transcriptome-wide_2008}, what are the characteristic markers of different cell-types and what are the genes are driving cell-state transitions \cite{furchtgott_discovering_2017}.
-\subsection{Modeling cell-state transitions}
-
-\subsection{Modeling cell-state transitions}
 
 Most of the studies described above have looked at variability of reporters at a locus and compared it to the variability at other loci. We still need to understand if this variability is linked to cell-state and if the variability is shared among genes in a pathway. In a similar vein, most of the single-cell RNA sequencing approaches have been done to understand the variability between multiple cell-types. However, we still don't understand the sources and extent of the variability that exists within a single-cell type. This proposal tackles these two questions
-
 Recently single-cell sequencing studies have established that substantial variability in gene expression exists amongst different cell types. However, these studies have also shown that there is variability between cells of the same cell type. It is not well understood what are the sources of this variability. We need to understand if this variability is due to neutral drift in gene expression or if there are functional cell states within a cell-type.
+\subsection{Sources of Cell-to-Cell variability}
+- Talk about the Rickard sandberg paper
+- talk about TRIP
+\subsubsection{Genetic control of noise}
+- Talk about Yoav's paper. The search for variance QTLs. Francesca's paper
+\subsubsection{Effect of chromatin on mean and noise}
+\subsubsection{Effect of sequence features on noise}
 
-In the Chapter 2, using mammalian cell-lines, I will try to explain the sources of variability observed within a cell-type. I will test the hypothesis that cells of the same cell-type express different subsets of genes due to stochastic activation of upstream regulators. Specifically, I will test the hypothesis that stochastic expression of transcription factors and stochastic activation of signaling pathways leads to variability between cells of the same cell-type.
 
-The results of this project will thus help understand the sources and extent of cell-to-cell variability in gene expression. 
-\defaultlists
+\subsection{Scope of thesis work}
+This thesis consists of two main works.
 
+In  Chapter 2 I will try to explain the sources of variability observed within a cell-type. I will test the hypothesis that cells of the same cell-type express different subsets of genes due to stochastic activation of upstream regulators. Specifically, I will test the hypothesis that stochastic expression of transcription factors and stochastic activation of signaling pathways leads to variability between cells of the same cell-type.
 
-
+In Chapter 3, I aim to understand what determines the noise levels of different genes in the genome. In collaboration with two other graduate students I devised a new genomic technology called SARGENT (Single-cell Analysis of Reporter Gene Expression Noise and Transcriptome) to study noise genome-wide. Using SARGENT, we integrats the same reporter gene in multiple genomic locations and measure the cell-to-cell variability in expression of this reporter gene using single-cell RNA sequencing. We then attempt to understand the determinants of this noise, after removing the effect of the mean level of expression, using the chromatin state and sequence features at different genomic locations. We also decompose the variability into extrinsic and intrinsic noise, and understand the determinants of these two noise sources. SARGENT also allows us to identify cell-states and quantify the impact of cell-states on noise.

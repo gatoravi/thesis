@@ -3,6 +3,7 @@
 
 \section{Abstract}
 Stochastic differences among clonal cells can initiate cell fate decisions in development or cause cell-to-cell differences in the responses to drugs or extracellular ligands. We hypothesize that some of this phenotypic variability is caused by stochastic fluctuations in the activities of transcription factors. We tested this hypothesis in NIH3T3-CG cells using the response to Hedgehog signaling as a model cellular response. Here we present evidence for the existence of distinct fast and slow responding substates of NIH3T3-CG cells. These two substates have distinct expression profiles, and fluctuations in the activity of the Prrx1 transcription factor (TF) underlie some of the differences in expression and responsiveness between fast and slow cells. We speculate that similar variability in other TFs may underlie other phenotypic differences among genetically identical cells.
+
 \section{Introduction}
 Stochastic molecular fluctuations occur within cells \cite{Raser2004-pb,McAdams1997-zq}\cite{Ozbudak2002-dx,Elowitz2002-wn,Raj2006-oo}\cite{Blake2003-yd}. These molecular fluctuations can cause phenotypic variability between genetically identical cells in the same environment. For example, cell-to-cell fluctuations of SCA1 help determine the lineage along which hematopoietic stem cells will differentiate \cite{Chang2008-kv}, and cell-to-cell fluctuations of EGFR and AXL underlie the resistance of rare melanoma cells to chemotherapy \cite{Shaffer2017-ql,Shaffer2018-zl}. Because such molecular fluctuations can have important phenotypic consequences, a key question that needs to be answered is what are the molecular mechanisms underlying cell-to-cell variability within clonal cell populations?
 
@@ -15,11 +16,20 @@ We use the cellular response to extracellular Hedgehog (HH) as a phenotype to te
 \section{Results}
 
 \subsection{Variability in the HH response}
-
+%figure1
+\begin{figure}[t!]  
+    \centering
+    \includegraphics[width=\linewidth]{figures/hedgehog/hh_figure1.pdf}
+    \caption[]{%
+        \textbf{}
+    }
+    \label{fig:hh_figure1}
+\end{figure}
 
 We first asked whether clonal cells growing in the same environment show variability in their responses to HH signaling. To address this question, we used NIH3T3-CG cells which are an established model of HH signaling \cite{Pusapati2018-gs,Kinnebrew2019-gt}. Treating these cells with SAG activates the pathway, resulting in elevated activity of Gli transcription factors \cite{Briscoe2013-ze,Lee2016-bf,Kong2019-wo}. This increased activity of Gli is read out by a genome-integrated GFP reporter gene regulated by eight Gli binding sites (Supplementary Figure 1). To assess variability in the HH response we treated NIH3T3-CG cells with SAG and monitored the response of the GFP reporter gene by flow cytometry (Figure 1A). Although monocultures of NIH3T3-CG cells are clonal and are grown in the same controlled environment, we detected significant cell-to-cell variability in reporter gene expression in response to SAG (Figure 1B). For example, at 30 hours post SAG treatment only 39\% of cells had activated the reporter gene, whereas by 92 hours most cells responded (Supplementary Figure 2). We observed similar variability of response in multiple experimental replicates grown on different days and derived from multiple single-cell clones (Supplementary Figure 3).  The data support a unimodal distribution using Hartigan’s dip test\cite{Hartigan1985-zq}. What accounts for the difference between fast and slow responding cells in monocultures with no genetic or environmental variation?
 
 \subsection{Fast and slow responding NIH3T3-CG cells}
+
 
 We asked whether cells that respond quickly to SAG derive from untreated cells with expression profiles that are distinct from the slow responding cells. To do this, we performed scRNA-seq on cells at 0, 17, and 30 hours after the addition of SAG. We chose the 30 hour time-point since we observed close to maximal cell-to-cell variability in response at this time-point and the 17 hour time-point is about halfway in-between the start of the response and 30 hours. The SAG addition was done in a staggered manner to process all three scRNA-seq libraries in a single batch (Methods, Supplementary Figure 4). We first visualized the cells at the three time-points using UMAP (Figure 1C) and performed unsupervised clustering of cells. On the same UMAP plot, we colored the cells for Hedgehog response using four Hedgehog response genes (Methods) and observed a region of the UMAP where the responding cells reside (Figure 1D). We observed similar results when we visualized cells using Principal Components Analysis (PCA) (Supplementary Figure 5), but UMAP highlighted the local differences between cells better and captured all the variation in two dimensions.
 
@@ -31,7 +41,7 @@ One hypothesis that might explain cell-to-cell differences in the timing of the 
 
 \subsection{Differences in cell cycle state do not fully explain fast and slow responding cells}
 
-We next asked whether differences in the cell-cycle state of cells might explain the differences between the fast and slow responding cells. We serum-starve cells prior to hedgehog treatment to synchronize the cells. We used the global expression profiles of serum-starved untreated cells to assign them to different phases of the cell cycle and asked whether fast responding cells were enriched for any specific phase of the cell-cycle. We observed a 1.5 fold enrichment (74.3% of fast responders vs 50.4% in the slow responders) of G1 cells in the fast responders compared to the slow responders (Supplementary Figure 8). While we found a statistically significant enrichment, the fact that half of slow responding cells were found in G1 suggests that being in G1 is not sufficient to respond faster. To validate the Seurat cell cycle measurements, we measured the % of cells in different phases of the cell cycle using Propidium Iodide staining after 24 hours and 48 hours of serum starvation (Supplementary Figure 9A). The computed percent of cells in different phases of the cell cycle after 24 hours of serum starvation agrees with the Seurat estimated cell-cycle fractions. To further test the effect of the length of serum starvation, we serum starved cells to two lengths - 24 hours and 48 hours. We then used Propidium Iodide staining to look at the % of cells in different phases of the cell cycle. We observe similar amounts of hedgehog response variability after 48 hours of serum starvation as compared to 24 hours of serum starvation (Supplementary Figure 9B) indicating that 24 hour serum starvation is sufficient. We conclude that cell-cycle differences do not fully explain the differences between fast and slow responding cells.
+We next asked whether differences in the cell-cycle state of cells might explain the differences between the fast and slow responding cells. We serum-starve cells prior to hedgehog treatment to synchronize the cells. We used the global expression profiles of serum-starved untreated cells to assign them to different phases of the cell cycle and asked whether fast responding cells were enriched for any specific phase of the cell-cycle. We observed a 1.5 fold enrichment (74.3\% of fast responders vs 50.4\% in the slow responders) of G1 cells in the fast responders compared to the slow responders (Supplementary Figure 8). While we found a statistically significant enrichment, the fact that half of slow responding cells were found in G1 suggests that being in G1 is not sufficient to respond faster. To validate the Seurat cell cycle measurements, we measured the \% of cells in different phases of the cell cycle using Propidium Iodide staining after 24 hours and 48 hours of serum starvation (Supplementary Figure 9A). The computed percent of cells in different phases of the cell cycle after 24 hours of serum starvation agrees with the Seurat estimated cell-cycle fractions. To further test the effect of the length of serum starvation, we serum starved cells to two lengths - 24 hours and 48 hours. We then used Propidium Iodide staining to look at the \% of cells in different phases of the cell cycle. We observe similar amounts of hedgehog response variability after 48 hours of serum starvation as compared to 24 hours of serum starvation (Supplementary Figure 9B) indicating that 24 hour serum starvation is sufficient. We conclude that cell-cycle differences do not fully explain the differences between fast and slow responding cells.
 \subsection{Differentially expressed transcription factors and pathways in the fast-responder cells}
 
 We identified genes that are differentially expressed between untreated cells defined as either fast or slow responding (Methods). We focused on the top 300 genes, ranked by fold-change, that were statistically significantly different between the fast and slow populations (Supplementary Data 1). We use these 300 genes in subsequent analyses as markers of the fast responder state. Among the 300 genes, 37 genes are TFs; we decided to focus on the TFs in the differentially expressed genes because we hypothesize that fluctuations in TF activities account for the differences between fast and slow cells. The 37 differentially expressed TFs are shown in Supplementary Table 1. 
@@ -45,27 +55,53 @@ Slow responding cells might respond more slowly because they first have to enter
 
 \subsection{Overexpressing candidate transcription factors partially recreates the fast responder gene signature}
 
+%figure2
+\begin{figure}[t!]  
+    \centering
+    \includegraphics[width=\linewidth]{figures/hedgehog/hh_figure2.pdf}
+    \caption[]{%
+        \textbf{}
+    }
+    \label{fig:hh_figure2}
+\end{figure}
+
 Our results suggest that fluctuations in the activities of a small set of transcription factors and/or the upregulation of cholesterol biosynthesis pathway causes the differences between fast and slow responding cells. To test this hypothesis, we over-expressed these transcription factors and the cholesterol biosynthesis pathway and measured the bulk expression profiles of the resulting cells. We focused on the top three transcription factors based on fold-change in the fast responder cells (Supplementary Table 1): Jun, Egr1 and Prrx1. We also tested the transcription factor Srebf2, the main regulator of the cholesterol biosynthesis pathway \cite{Horton1998-lj}, because this pathway is upregulated in the fast responder cells (Supplementary Table 2). We chose Snai1 as a control transcription factor due to its lower fold change (fold-change 1.21). The expression of the top differentially expressed transcription factors co-localize with the fast responder cell populations (Supplementary Figure 10). We designed plasmids encoding the coding regions of Jun, Egr1, Prrx1, Srebf2 and Snai1 under the control of a strong CMV promoter, and with an mCherry gene downstream of the TF to measure transfection efficiency (Supplementary Figures 11, 12). Separately, we used a plasmid containing an mCherry reporter gene driven by a CMV promoter as a transfection control plasmid. We transfected these plasmids into NIH3T3-CG cells and performed bulk RNA-seq. We identified genes that are differentially expressed before and after transfection of each of the transcription factors but not after the control transfection (Supplementary Data 2, 3, 4, 5, 6).
 
 Overexpression of four of the five transcription factors (Prrx1, Snai1, Jun and Srebf2) individually misexpressed a significant number of the fast responder genes (Figure 2; Hypergeometric test: p-values = 9.7e-4, 6.3e-7, 1.2e-10, 1.9e-16), whereas Egr1 overexpression did not (p-value = 0.13). We found that overexpressing Snai1, our control TF with a lower fold-change, also misexpressed a significant number of fast-responder genes indicating that even TFs with lower fold-changes might be involved in creating the fast-responder signature in cells. We found that the union of all four of these TFs (Prrx1, Snai1, Jun and Srebf2) resulted in 115 out of the 300 fast responder gene signature, this is smaller than the naive sum of the individual target genes and indicates overlap in the sets of target genes regulated by the TFs. Overall, we interpret this result to mean that each TF independently regulates a subset of the fast-responder signature.
 
 \subsection{Prrx1 is a regulator of the fast responder state}
-
+%figure3
+\begin{figure}[t!]  
+    \centering
+    \includegraphics[width=\linewidth]{figures/hedgehog/hh_figure3.pdf}
+    \caption[]{%
+        \textbf{}
+    }
+    \label{fig:hh_figure3}
+\end{figure}
 We next asked whether the overexpression of any of these transcription factors was sufficient to increase the fraction of cells that respond to the Hedgehog signaling pathway. To test this prediction we engineered cells, using lentiviral vectors (Methods, Supplementary Figures 13, 14), carrying Dox-inducible (Supplementary Figure 15) versions of Prrx1, Srebf2 and Snai1 integrated into their genomes. This allowed us to compare the fraction of cells that respond to SAG when a TF is either induced or uninduced. We prioritized the list of transcription factors to test since we could not test all of them. We chose Srebf2 since it is the main regulator of the cholesterol biosynthesis pathway which is the top differentially enriched pathway in the fast responding cells (Supplementary Table 2) and showed a statistically significant enrichment. Additionally, we chose Prrx1 and Snai since they showed strong enrichment for competent genes in the transfection assay and because of their roles as developmental TFs.
 
-Inducing Prrx1 expression resulted in more cells responding to the Hedgehog pathway (Figure 3A, Supplementary Figures 16, 17). In the +Dox condition, at 32 hours post SAG treatment, 87.9% of cells become GFP+, whereas in the -Dox condition 65.4% of cells become GFP+. We did not observe a difference between the two groups with the induction of Snai1 (Supplementary Figure 18). Strong induction of Srebf2 was toxic to cells, and at induction levels that were not toxic we did not observe an increase in the response to SAG  (Supplementary Figure 19). From these results, we conclude that Prrx1 plays a role in the regulation of the Hedgehog response.
+Inducing Prrx1 expression resulted in more cells responding to the Hedgehog pathway (Figure 3A, Supplementary Figures 16, 17). In the +Dox condition, at 32 hours post SAG treatment, 87.9\% of cells become GFP+, whereas in the -Dox condition 65.4\% of cells become GFP+. We did not observe a difference between the two groups with the induction of Snai1 (Supplementary Figure 18). Strong induction of Srebf2 was toxic to cells, and at induction levels that were not toxic we did not observe an increase in the response to SAG  (Supplementary Figure 19). From these results, we conclude that Prrx1 plays a role in the regulation of the Hedgehog response.
 
 Bulk RNA-seq profiles from Prrx1 induced cells (Supplementary Data 7) revealed a stronger overlap with fast responding genes than in the plasmid overexpressed cells (Figure 3B; n = 74 out of 300, p-value = 4e-34, enrichment = 5.37 fold). This stronger measured response is likely because in transiently transfected cells only a subset of the cells are expressing Prrx1 whereas in the lentiviral transduced cells all the cells in the population are overexpressing Prrx1. Induction of Prrx1 results in significant enrichment of genes involved in the cholesterol biosynthesis pathway (adjusted p-value = 0.025, enrichment = 10.42, n = 4 out of 13 genes in the pathway). Prrx1 induction also results in the upregulation of Gli2, the primary effector TF of Hedgehog signaling \cite{Kong2019-wo,Briscoe2013-ze,Lee2016-bf}. Gli2 is regulated post-translationally by Hedgehog signaling, so the upregulation of Gli2 in uninduced cells may result in a larger pool of Gli2 protein to activate when the pathway is activated. We observe slight leaky expression in the transduced clone with a fold change of 1.5 X which could underlie some of the higher response in the -Dox condition compared to wild-type cells in Figure 1. A previous study used genome-wide CRISPR knockouts \cite{Pusapati2018-gs} to identify regulators of hedgehog signaling and did not find Prrx1 necessary for Hedgehog signaling. Our results indicate that overexpression of Prrx1 can recreate a substantial part of responder signature, which we interpret as the reason more of these cells respond to Hedgehog signaling.
 
 \subsection{Most cells activate the fast responder gene signature upon Prrx1 induction}
-
+%figure4
+\begin{figure}[t!]  
+    \centering
+    \includegraphics[width=\linewidth]{figures/hedgehog/hh_figure4.png}
+    \caption[]{%
+        \textbf{}
+    }
+    \label{fig:hh_figure4}
+\end{figure}
 We next examined the trajectory taken by cells overexpressing Prrx1. We generated scRNA-seq profiles of Prrx1-induced and uninduced cells followed by stimulation with SAG (Figure 4A). We started with the cells carrying the genome-integrated inducible Prrx1 cassette described in the previous section. We grew cells in the absence or presence of Dox, to induce Prrx1 expression, and measured the HH response by flow cytometry. We again observed a larger response in Prrx1-induced cells than in uninduced cells (Supplementary Figure 20). We then collected cells at three time points after SAG treatment for both Prrx1-induced and uninduced cells and performed scRNA-seq.
 
 Prrx1 induced cells follow a faster and stronger response trajectory compared to their uninduced counterparts. When Prrx1 is not induced, cells from each time-point again cluster separately, suggesting a steady progression of response to SAG through time (Figure 4B). By contrast, when we induced Prrx1 expression with Dox, cells at the 19 hr and 30 hr time point cluster together, suggesting a faster response to SAG induction (Figure 4B). Overlaying the Hedgehog response on these clusters supports this interpretation as Prrx1-induced cells at 19 hours show similar levels of the Hedgehog response as induced cells at 30 hrs (Figure 4C). However, even at 30 hrs induced and uninduced cells do not cluster together, which suggests that Prrx1 induction results in a stronger response to Hedgehog in cells that do respond. Taken together, these results show that the induction of Prrx1 causes more cells to respond to SAG, and that those cells that do respond, respond faster and stronger than cells that do not express Prrx1.
 
 The trajectory analysis also revealed differences between induced and uninduced cells in the early response to SAG that are consistent with the idea that Prrx1 causes cells to adopt fast-responding expression profiles. Uninduced cells again showed distinct converging trajectories from slow and fast responding states (clusters 4, 5 in Figure 4D), but Prrx1-induced cells respond primarily along the fast trajectory. In addition, the Prrx1-induced cells start from a position along the fast trajectory that is closer to the later time points than the uninduced cells (clusters 9, 10, 11 in Figure 4D), which suggests that they are “further along” the fast trajectory than uninduced cells even before stimulation with SAG. 
 
-We next asked whether inducing Prrx1 creates more fast-responding cells. To detect fast responding cells in this experiment we used a model-based cell-type classifier Garnett \cite{Pliner2019-vn}. We trained the classifier to learn the features of fast-responding and slow responding cells using the cells from the untreated condition shown in Figure 1. We then used the classifier to classify untreated cells grown in the +Dox and -Dox conditions as fast responders and slow responders. In the untreated cells grown in -Dox condition, the classifier classified 19% of cells as fast-responders, 48% as slow responders and 33% of the cells as unknown. The fast responders in this group separate from the slow responders in the UMAP plots and are slightly ahead in the response trajectory even before SAG treatment  (Supplementary Figure 21 A, B). In contrast, in the untreated cells from the +Dox condition the classifier classified 91% of cells as fast-responders, 2% slow-responders and 7% as unknown (Supplementary Figure 21 C, D). Thus in the presence of Dox, the majority of cells display the fast-responder expression signature. We infer from this result that inducing Prrx1 generates a fast responder cell-state which makes more cells respond to the Hedgehog agonist, as early as 19 hours.
+We next asked whether inducing Prrx1 creates more fast-responding cells. To detect fast responding cells in this experiment we used a model-based cell-type classifier Garnett \cite{Pliner2019-vn}. We trained the classifier to learn the features of fast-responding and slow responding cells using the cells from the untreated condition shown in Figure 1. We then used the classifier to classify untreated cells grown in the +Dox and -Dox conditions as fast responders and slow responders. In the untreated cells grown in -Dox condition, the classifier classified 19\% of cells as fast-responders, 48\% as slow responders and 33\% of the cells as unknown. The fast responders in this group separate from the slow responders in the UMAP plots and are slightly ahead in the response trajectory even before SAG treatment  (Supplementary Figure 21 A, B). In contrast, in the untreated cells from the +Dox condition the classifier classified 91\% of cells as fast-responders, 2\% slow-responders and 7\% as unknown (Supplementary Figure 21 C, D). Thus in the presence of Dox, the majority of cells display the fast-responder expression signature. We infer from this result that inducing Prrx1 generates a fast responder cell-state which makes more cells respond to the Hedgehog agonist, as early as 19 hours.
 
 \section{Discussion}
 
@@ -88,7 +124,7 @@ We grew NIH/3T3-CG cells and their derivatives in DMEM media supplemented with s
 We generated single-cell RNA sequencing libraries using the 10X Single Cell 3’ Reagent Kits v3.1 (10X genomics 1000269). We first released the cells from the cell culture flasks by adding Trypsin 0.25\%. We then prepared a cell suspension by following manufacturer’s instructions and targeting a final capture of 2000 cells for every sample. We then proceeded with library construction as described in the 10X protocol. We sequenced the final libraries at the DSIL and MGI at Washington University in St. Louis. Bulk RNA sequencing was performed using the services of Novogene corporation. Briefly, we extracted total RNA from cells, performed initial QC and shipped it to Novogene where library preparation and sequencing were performed targeting 20 million reads per sample. 
 
 \subsection{RNA sequencing analysis}
-We obtained counts for each transcript in each cell by using Cell Ranger version 3.1.0 (https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/using/count).  We analyzed the cell by count matrix using the standard analysis workflow of Seurat version 3.1.5.\cite{Butler2018-jc,Stuart2019-ra} For quality control, we kept cells that had at-least 10,000 UMIs per cell, had < 20 % of UMIs mapped to mitochondrial genes, and had between 2000 and 8000 genes covered. After QC, for the initial single-cell sequencing experiment we were left with transcriptome measurements for 1,192 cells for the untreated time-point, 797 cells at 17 hours and 899 cells at 30 hours. For the second single-cell RNA-sequencing experiment using the inducible Prrx1 cell-line, under the no-Dox condition we were left with 4532 cells at the untreated time-point, 3726 cells at 19 hours and 2645 cells at 30 hours after QC. Under the Dox condition, after QC we were left with 2362 cells at the untreated time-point, 3014 cells at 19 hours and 2645 cells at 30 hours. 
+We obtained counts for each transcript in each cell by using Cell Ranger version 3.1.0 (https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/using/count).  We analyzed the cell by count matrix using the standard analysis workflow of Seurat version 3.1.5.\cite{Butler2018-jc,Stuart2019-ra} For quality control, we kept cells that had at-least 10,000 UMIs per cell, had < 20\% of UMIs mapped to mitochondrial genes, and had between 2000 and 8000 genes covered. After QC, for the initial single-cell sequencing experiment we were left with transcriptome measurements for 1,192 cells for the untreated time-point, 797 cells at 17 hours and 899 cells at 30 hours. For the second single-cell RNA-sequencing experiment using the inducible Prrx1 cell-line, under the no-Dox condition we were left with 4532 cells at the untreated time-point, 3726 cells at 19 hours and 2645 cells at 30 hours after QC. Under the Dox condition, after QC we were left with 2362 cells at the untreated time-point, 3014 cells at 19 hours and 2645 cells at 30 hours. 
 
 We performed dimension reduction of single cells using UMAP\cite{McInnes2018-sm}. We identified differentially expressed genes between clusters using the FindMarkers function in Seurat.  We identified pathways that were enriched in the set of differentially expressed genes using the Gene Ontology web resource\cite{Ashburner2000-id,Mi2019-pi,Gene_Ontology_Consortium2021-mx}.
 
@@ -125,15 +161,16 @@ We first extracted total RNA from cells using the Qiagen RNEasy kit(Qiagen 74004
 \section{Data Availability}
 The raw single-cell and bulk RNA sequencing data from this publication are available from GEO under the accession numbers GSE203134 and GSE206154. Analysis notebooks used for the analysis of single-cell data are available for download at Zenodo: https://doi.org/10.5281/zenodo.6981764
 
-
+\clearpage
 \section{Supplementary Figures}
 
+\clearpage
 \section{Supplementary Tables}
 
-\begin{supptable}[htb]
+\begin{supptable}[p]
 \centering
 \caption{List of top transcription factors overexpressed differentially expressed in the fast responders compared to the slow responders}
-\begin{tabular}{ | c | c | c | c | }
+\begin{tabular}{ cccc }
 \toprule
 \textbf{Transcription Factor} & \textbf{Fold-change (fast responders vs slow responders)} & \textbf{Adjusted p-value} \\
 \midrule
@@ -179,10 +216,10 @@ Ddit3 & 0.533202 & 8.25E-58 \\
 \label{tab:hedgehog_tableS1}
 \end{supptable}
 
-\begin{supptable}[htb]
+\begin{supptable}[p]
 \centering
 \caption{List of signaling pathways enriched in the fast responder cells compared to slow responders}
-\begin{tabular}{ | c | c | c | }
+\begin{tabular}{ p{3cm}p{3cm}p{3cm} }
 \toprule
 \textbf{Pathway} & \textbf{Genes in fast responder gene signature and in the pathway (Total number of genes in pathway)} & \textbf{Enrichment over random expectation (FDR adjusted p-value)} \\
 \midrule
@@ -196,10 +233,10 @@ Cytoskeletal regulation by Rho GTPase & 6 (79) & 5.60 (2.3e-2) \\
 \end{supptable}
 
 
-\begin{supptable}[htb]
+\begin{supptable}[p!]
 \centering
 \caption{Primer sequences used for qPCR}
-\begin{tabular}{ | c | c | }
+\begin{tabular}{ cc }
 \toprule
 \textbf{Primer} & \textbf{Sequence} \\
 \midrule
