@@ -2,6 +2,18 @@
 \label{chap:conclusion}
 \tightlists
 
+Recent years have shown that there is a lot of cell-to-cell variability in gene expression. However what does this variability mean? How does a cell respond to signals that are so variable between cells? How are biological processes regulated with high fidelity in the face of such variability. A lot of work has been carried out to answer these questions over the years. My thesis work provides a few more hints about how such systems operate.
+
+\section{How are cellular decisions made in the face of noise?}
+
+In the first project I showed that the cell-to-cell variability of a single transcription factor Prrx1 can influence whether a cell responds to a perturbation or not. One model that might explain how the cell responds is by using a threshold model for any cellular decision. The threshold model suggests that cells that have a level of protein above a certain level are the ones that are poised to respond. Cells that are below a protein level are the ones that don't respond. When a population of cells are induced to express a certain gene, the mean level of expression increases but often the mean level increase is accompanied by an increase in the cell-to-cell variability. However, the proportion of cells that respond to a stimuli is determined by the proportion of cells that are able to express the gene above a certain level. This model fits with what I observe in Prrx1.
+
+In the model for hedgehog signaling in \label{Chap:hedgehog} we hypothesized that stochastic activity of transcription factors might underlie why some cells are able to respond faster to hedgehog perturbation vs others. We identified a lost of candidate transcription factors that are overexpressed in the fast responding cells and tested five TFs. We found that overexpressing one of the transcription factors Prrx1 is able to increase the proportion of cells that respond faster. In a threshold model of cellular decision making, cells that have sufficient activity of Prrx1, above a certain threshold, are able to respond to the hedgehog stimulation.  When we induce Prrx1 expression, we increase the mean and variance of Prrx1. However the proportion of cells that express Prrx1 above a certain threshold are able to respond. A follow-up question from this study is how many such regulators exist and how might we find them?
+
+We identified the fast responder gene signature consisting of 300 candidates. In theory, there might be some false positives amongst this list of 300 genes. However, in our model a TF that is able to express a sufficient fraction of these 300 genes is able to make the cells respond. When we overexpress Prrx1, we showed that we misexpress 74 of the 300 genes. Could the 74 genes be the ones that matter? I think this question still remains to be answered. It could be that only a small fraction of the 74 genes matters. Or it could be the case that Prrx1 operates through a different mechanism where it turns on Gli2, and that's all that matters for the hedgehog signaling. We tried approaches looking for motifs in the 300 genes, and identifying enriched TFs in the promoter regions of the 300 genes, however we were limited by the number of TFs that we could test for their effect on the hedgehog response. 
+
+
+
 
 My thesis consists of two main parts. 
 In the first part I investigated cell-to-cell variability in the hedgehog pathway... We showed

@@ -59,9 +59,8 @@ In bacteria, individual bacterium often display a persistor phenotype and grow a
 - Talk about Arjun's cells
 - Break teh paragraphs by in-vivo, fish, worm, cell-lines etc.
 
-\subsubsection{Selection on noise levels}
 - Talk about selction on noise
-
+- wittkopp paper
 
 \subsection{Single-cell RNA sequencing allows detection of cell-to-cell variability }
 
@@ -82,11 +81,114 @@ Recently single-cell sequencing studies have established that substantial variab
 \subsection{Sources of Cell-to-Cell variability}
 - Talk about the Rickard sandberg paper
 - talk about TRIP
+
 \subsubsection{Genetic control of noise}
+An important question that still remains to be answered is are the mean and noise controlled by different genetic regulatory elements.
+We have made a lot of progress in identifying loci that are associated with the mean level of expression \cite{gtex} \cite{eqtlgen} \cite{more}. These studies have identified eQTLs for almost every gene in the genome \cite{} About half of all GWAS hits can now be mapped to eQTLs \cite{}. However this only looks at the mean level of expression. Could a similar approach be used to find loci that find variance QTLs?
+
+Studies have looked explicitly for variance QTLs. Sarkar et al. tried to find variance QTLs using the well characterized YRI cell lines from the HapMap project \cite{hapmap}. Briefly, they collected single-cell RNA-sequencing data from N individuals using 10X. Then they fit a negative binomial to each gene and came up with a noise measure for each gene. Since they also had genotype information for each of these individuals they looked for varaince QTLs. What di they find? They found all variance QTLs were also mean QTLs. THey concluded that their sample size was too small and that they would need n number of samples to find variance QTLs at X\% power. This study provided some methodological innovations despite being a negative result. There has been one other study that has used a simlar approach.
+
+Prior to the publication of the study by Sarkar et al. I also looked at the single-cell data from their group through a collaboration with their group. I looked at cell-to-cell variability using different approaches. My variance QTL analysis also detected variance QTLs that were explained entirely by mean QTLs. I also looked at every gene's expression for every individual, and tried to find genes whose variance in gene expression was disproportionate to their mean levels. I found a set of genes that had abnovmal variance (shown in red in \fref{fig:intro_figure1}). However upon closer inspection, many of the genes that displayed this property were enriched for Mitochondrial genes. It is a known observation in single-cell 
+RNA sequencing that cells that are prone to dying exhibit higher levels of mitochondrial transcripts \cite {seurat}, hence we did not follow up on this finding.
+
+%figure1
+\begin{figure}[t!]  
+    \centering
+    \phantomlabel{fig:cas_figure6a}
+    \phantomlabel{fig:cas_figure6b}
+    \phantomlabel{fig:cas_figure6c}
+    \includegraphics[width=\linewidth]{figures/intro/intro_outlier1.png}
+    \caption[SARGENT measures the insertion effect of a transgene.]{%
+        \textbf{SARGENT measures the insertion effect of a transgene.}
+        \subref{fig:cas_figure6a}
+        Schematic for expression change detection in the transcriptome data.
+     
+    }
+    \label{fig:outliervariance}
+\end{figure}
+
+
+Francesca et al. used 10X scRNA-seq data from X sampels and attempted to find QTLs. They found. 
+
+
 - Talk about Yoav's paper. The search for variance QTLs. Francesca's paper
+
+\subsubsection{Selection on noise levels}
+
+\subsubsection{Noise in transcription factors}
+It remains to be well understood how the noise in the upstream regulators of a pathway propagates through a pathway. Chang et al. \cite {sui_huang} showed that the variation in the transcription factor can have an effect on which way a cell differentiates.
+
+
+Genetically identical yeast when grown in the same environment express different amounts of the same
+protein. The stochasticity is due to biochemical fluctuations in the small number of molecules involved in
+gene expression. In this Aim, I will address the question of whether the observed variability in the expression
+of a gene is shared with other genes in the genome. Most studies of gene expression stochasticity have focused
+on one locus or a few loci with a synthetic or endogenous gene. These studies have established that most
+of the variance at a locus is due to cell-to-cell variability4. However, it is not known if cells with different
+amounts of a protein are in different cell-states. Aim1 will address these questions.
+
+We looked at the fluctuations in the transcriptionf actor 
+
+
+
+
+
+%figure1
+\begin{figure}[t!]  
+    \centering
+    \phantomlabel{fig:cas_figure6a}
+    \phantomlabel{fig:cas_figure6b}
+    \phantomlabel{fig:cas_figure6c}
+    \includegraphics[width=\linewidth]{figures/intro/intro_gfp_density_X.pdf}
+    \caption[SARGENT measures the insertion effect of a transgene.]{%
+        \textbf{SARGENT measures the insertion effect of a transgene.}
+        \subref{fig:cas_figure6a}
+        Schematic for expression change detection in the transcriptome data.
+     
+    }
+    \label{fig:gfpXdensity}
+\end{figure}
+
+
+
+%figure1
+\begin{figure}[t!]  
+    \centering
+    \phantomlabel{fig:cas_figure6a}
+    \phantomlabel{fig:cas_figure6b}
+    \phantomlabel{fig:cas_figure6c}
+    \includegraphics[width=\linewidth]{figures/intro/intro_aim1_task1.pdf}
+    \caption[SARGENT measures the insertion effect of a transgene.]{%
+        \textbf{SARGENT measures the insertion effect of a transgene.}
+        \subref{fig:cas_figure6a}
+        Schematic for expression change detection in the transcriptome data.
+     
+    }
+    \label{fig:aim1_task1}
+\end{figure}
+
+
+
+%figure1
+\begin{figure}[t!]  
+    \centering
+    \phantomlabel{fig:cas_figure6a}
+    \phantomlabel{fig:cas_figure6b}
+    \phantomlabel{fig:cas_figure6c}
+    \includegraphics[width=\linewidth]{figures/intro/intro_tdh2_pca.pdf}
+    \caption[SARGENT measures the insertion effect of a transgene.]{%
+        \textbf{SARGENT measures the insertion effect of a transgene.}
+        \subref{fig:cas_figure6a}
+        Schematic for expression change detection in the transcriptome data.
+     
+    }
+    \label{fig:tdh2_pca}
+\end{figure}
 \subsubsection{Effect of chromatin on mean and noise}
 \subsubsection{Effect of sequence features on noise}
 
+\subsection{ Is teh variability shared betwen pathway members}
+Talk about your TDH3 results here. Also setup for the cell-state story of CAS.
 
 \subsection{Scope of thesis work}
 This thesis consists of two main works.
