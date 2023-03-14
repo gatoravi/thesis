@@ -33,7 +33,7 @@ We use the cellular response to extracellular Hedgehog (HH) as a phenotype to te
 \begin{figure}[t!]  
     \centering
     \includegraphics[width=\linewidth]{figures/hedgehog/hh_figure1.pdf}
-    \caption[]{%
+    \caption[Cells show variability in response to hedgehog stimulation.]{%
         \textbf{Cells show variability in response to hedgehog stimulation.}
         A) Cells were treated with hedgehog agonist SAG for 0, 17 and 30 hours and collected for single-cell RNA sequencing and flow cytometry. (B) Flow cytometry results at 17 and 30 hours indicate that cells show variability in their timing of response, not all same cells respond at the same time (C) Cells clustered with a clear temporal progression of hedgehog response when colored by sample time-point (D) Cells were scored for hedgehog pathway response by looking at mRNA of four canonical hedgehog response genes, responder cells cluster in one part of the graph. Response trajectories were inferred using trajectory analysis software (E) Unsupervised clustering of cells is shown. Cells take two different trajectories to respond to hedgehog pathway activity, one path is fast responding consisting of only cells at zero hours, the other response is from slow responders consisting of cells at 0, 17 and 30 hours.
     }
@@ -73,7 +73,7 @@ Slow responding cells might respond more slowly because they first have to enter
 \begin{figure}[t!]  
     \centering
     \includegraphics[width=\linewidth]{figures/hedgehog/hh_figure2.pdf}
-    \caption[]{%
+    \caption[Overexpressing transcription factors partially recreates the fast responder gene expression signature.]{%
         \textbf{Overexpressing transcription factors partially recreates the fast responder gene expression signature.}
         We overexpressed five transcription factors, one at a time, Prrx1 (A), Snai1 (B), Srebf2 (C), Jun (D) and Egr1 (E) using a plasmid transfection assay followed by bulk RNA sequencing. We computed the overlap between the genes that change expression upon transcription factor overexpression(compared to control transfection, n = 3 replicates each) and the 300 genes in the fast-responder gene signature identified using the single-cell data. The (*) indicates a statistically significant enrichment using a hypergeometric test.
 
@@ -90,7 +90,7 @@ Overexpression of four of the five transcription factors (Prrx1, Snai1, Jun and 
 \begin{figure}[t!]  
     \centering
     \includegraphics[width=\linewidth]{figures/hedgehog/hh_figure3.pdf}
-    \caption[]{%
+    \caption[Inducing Prrx1 expression makes more cells fast-responders.]{%
         \textbf{Inducing Prrx1 expression makes more cells fast-responders.} (A) We induced Prrx1 expression in engineered cells by adding Doxycycline prior to performing the hedgehog assay. We compared the hedgehog response of induced cells to cells that were not induced using flow cytometry 32 hours post SAG treatment (n = 3 replicates each). (B) We identified the genes that change expression when Prrx1 is overexpressed by bulk RNA sequencing. We then computed the overlap of these genes with the 300 genes in the fast responder signature.The (*) indicates a statistically significant enrichment using a hypergeometric test. Error bars shown are standard error above and below the mean.
     }
     \label{fig:hh_figure3}
@@ -106,7 +106,7 @@ Bulk RNA-seq profiles from Prrx1 induced cells (Supplementary Data 7) revealed a
 \begin{figure}[t!]  
     \centering
     \includegraphics[width=\linewidth]{figures/hedgehog/hh_figure4.png}
-    \caption[]{%
+    \caption[Prrx1 induction results in faster response trajectory.]{%
         \textbf{Prrx1 induction results in faster response trajectory.} (A) Cells were grown in the absence and presence of Doxycycline for 24 hours, to induce Prrx1 expression, and treated with the hedgehog pathway agonist for 0 (Untreated), 19 and 30 hours. (B) The clustering of the cells from the three time points across the two conditions (C) The inferred trajectory of hedgehog response. Cells were scored and colored for hedgehog pathway response by looking at mRNA expression of four canonical hedgehog response genes (D) The unsupervised clustering of the cells using Seurat. Fast responders and slow responders predicted using a cell-type classifier are shown.
     }
     \label{fig:hh_figure4}
@@ -274,7 +274,7 @@ Hprt-rev & CCAGTTTCACTAATGACACAAACG \\
 \begin{suppfigure}[p]  
     \centering
     \includegraphics[width=\linewidth]{figures/hedgehog/SuppFigure1.png}
-    \caption[caption1]{
+    \caption[A simplified view of the Hedgehog pathway and activation of the GFP reporter]{
         \textbf{A simplified view of the Hedgehog pathway and activation of the GFP reporter}
         (A) In the absence of Hedgehog or SAG the pathway is turned off within a cell, the repression of SMO by PTCH leads to the transcription factor GLI being in its repressed form and it does not turn on the GFP reporter gene. In the presence of Hedgehog or SAG, PTCH no longer represses SMO, GLI acts as an activator and turns on the GFP reporter gene. (B) The cells used in our experiment were generated by Pusapati et al. and contain an integrated GFP reporter gene downstream of eight binding sites of GLI.  
     }
@@ -285,9 +285,8 @@ Hprt-rev & CCAGTTTCACTAATGACACAAACG \\
 \begin{suppfigure}[p]  
     \centering
     \includegraphics[width=\linewidth]{figures/hedgehog/SuppFigure2.png}
-    \caption[caption1]{
-        Flow cytometry results, at 0 (Untreated), 72 (3 biological replicates) and 92 hours (2 biological replicates) post SAG treatment. At 72 hours there are a mean of 87.6\% responders across replicates and at 92 hours the mean fraction of responding cells is 91.6\%
-  
+    \caption[Most cells are responders by 72 hours]{
+        Flow cytometry results, at 0 (Untreated), 72 (3 biological replicates) and 92 hours (2 biological replicates) post SAG treatment. At 72 hours there are a mean of 87.6\% responders across replicates and at 92 hours the mean fraction of responding cells is 91.6\%.
     }
     \label{fig:hh_figureS2}
 \end{suppfigure}
@@ -296,7 +295,7 @@ Hprt-rev & CCAGTTTCACTAATGACACAAACG \\
 \begin{suppfigure}[p]  
     \centering
     \includegraphics[width=\linewidth]{figures/hedgehog/SuppFigure3.png}
-    \caption[caption1]{
+    \caption[Variability in multiple single-cell clones of NIH3T3-CG wildtype]{
         We grew out multiple single-cell clones from wildtype NIH3T3-CG cells and measured the percentage of cells that respond after treating the cells with the hedgehog protocol at the 30 hour time-point. Error bars shown are standard error above and below the mean.  
     }
     \label{fig:hh_figureS3}
@@ -305,7 +304,7 @@ Hprt-rev & CCAGTTTCACTAATGACACAAACG \\
 \begin{suppfigure}[p]  
     \centering
     \includegraphics[width=\linewidth]{figures/hedgehog/SuppFigure4.png}
-    \caption[caption1]{
+    \caption[No evidence for batch effect]{
         We see no evidence for batch effect since all the three samples were processed in a single batch. We plotted principal components for all the cells shown in Figure 1. Only PC4 (C ) separates out the samples, and this separation is expected based on genes that turn on and off in a temporal manner in response to hedgehog. (D) shows the standard deviation explained by each principal component.  
     }
     \label{fig:hh_figureS4}
@@ -314,7 +313,7 @@ Hprt-rev & CCAGTTTCACTAATGACACAAACG \\
 \begin{suppfigure}[p]  
     \centering
     \includegraphics[width=\linewidth]{figures/hedgehog/SuppFigure5.png}
-    \caption[caption1]{
+    \caption[PCA visualizations are similar to UMAP]{
         Visualizing cells with PCA shows similar results as visualizing with UMAP. We performed PCA on the cell by gene matrix and plotted the first two principal components for each cell. We colored cells by sample (A), hedgehog activity score (B) and unsupervised Seurat clusters (C ). We highlighted the slow responders (D) and fast responders (E)  identified in Figure 1 on the PCA plot and see that they separate out on the principal components plot.
     }
     \label{fig:hh_figureS5}
@@ -323,7 +322,7 @@ Hprt-rev & CCAGTTTCACTAATGACACAAACG \\
 \begin{suppfigure}[p]  
     \centering
     \includegraphics[width=\linewidth]{figures/hedgehog/SuppFigure6.png}
-    \caption[caption1]{
+    \caption[Slingshot trajectory analysis results]{
         We used a second trajectory analysis tool Slingshot. Similar to results from Monocle in Figure 1, cells take two different trajectories in their response to SAG. We colored the cells by sample (A), hedgehog activity score (B) and unsupervised Seurat clusters (C ) as in Figure 1. 
     }
     \label{fig:hh_figureS6}
@@ -332,7 +331,7 @@ Hprt-rev & CCAGTTTCACTAATGACACAAACG \\
 \begin{suppfigure}[p]  
     \centering
     \includegraphics[width=\linewidth]{figures/hedgehog/SuppFigure7.png}
-    \caption[caption1]{
+    \caption[Hedgehog score distribution at the 0, 17 and 30 hour time-points]{
         Hedgehog score distribution of cells at three different timepoints. For each cell, using the single-cell RNA sequencing data, we calculated the hedgehog score by looking at the expression of Gli1, Gli2, Ptch1 and GFP.  We assigned each gene in each cell a score of 1 if detected above background expression level, and we summed across the four genes to compute a score in the range [0-4]. In the untreated population scores are close to zero, by 30 hours more cells respond and the responders are the cells with score >= 3. Note the y-axis for each panel is different, however the interpretation is made by looking at the distribution of scores within each panel.  
     }
     \label{fig:hh_figureS7}
@@ -342,7 +341,7 @@ Hprt-rev & CCAGTTTCACTAATGACACAAACG \\
 \begin{suppfigure}[p]  
     \centering
     \includegraphics[width=\linewidth]{figures/hedgehog/SuppFigure8.png}
-    \caption[caption1]{
+    \caption[Cell cycle assignments for fast responders and slow responders]{
         Inferred cell cycle phase for fast responders and slow responders. We inferred the cell cycle phase using the CellCycleScoring function in Seurat. 
     }
     \label{fig:hh_figureS8}
@@ -352,7 +351,7 @@ Hprt-rev & CCAGTTTCACTAATGACACAAACG \\
 \begin{suppfigure}[p]  
     \centering
     \includegraphics[width=\linewidth]{figures/hedgehog/SuppFigure9.png}
-    \caption[caption1]{
+    \caption[No effect of serum starvation on response]{
         We used Propidium iodide staining to measure cell-cycle proportions of cells after 24 and 48 hours of serum starvation(using FlowJo CellCycle analysis), and compared to the cell cycle results for the untreated cells in Figure 1 estimated using Seurat (A) We serum-starved cells for 24 hours  (n = 2 replicates) and 48 hours (n = 3 replicates) performed the hedgehog assay as described on these two populations of cells and measured the fraction of responders after 30 hours using (B)
   
     }
@@ -363,7 +362,7 @@ Hprt-rev & CCAGTTTCACTAATGACACAAACG \\
 \begin{suppfigure}[p]  
     \centering
     \includegraphics[width=\linewidth]{figures/hedgehog/SuppFigure10.png}
-    \caption[caption1]{
+    \caption[TF expression on UMAP]{
         The fast responder population (A) and slow responder population (B) are shown on the UMAP plots. TFs that are overexpressed in the fast responders compared to the slow responders are shown, Jun (C), Egr1 (D), Prrx1 (E),  Snai1 (F). The regulator of the cholesterol biosynthesis pathway which is differentially active in the fast responding cells is shown in (G)  
     }
     \label{fig:hh_figureS10}
@@ -373,7 +372,7 @@ Hprt-rev & CCAGTTTCACTAATGACACAAACG \\
 \begin{suppfigure}[p]  
     \centering
     \includegraphics[width=\linewidth]{figures/hedgehog/SuppFigure11.png}
-    \caption[caption1]{
+    \caption[Plasmid design for Srebf2 transfection]{
         Plasmid design for overexpressing Srebf2 via transfection. The coding region of truncated Srebf2 is under the control of the CMV promoter.
     }
     \label{fig:hh_figureS11}
@@ -383,7 +382,7 @@ Hprt-rev & CCAGTTTCACTAATGACACAAACG \\
 \begin{suppfigure}[p]  
     \centering
     \includegraphics[width=\linewidth]{figures/hedgehog/SuppFigure12.png}
-    \caption[caption1]{
+    \caption[Plasmid design for Snai1, Prrx1, Jun and Egr1 transfection]{
         Plasmid design for overexpressing Snai1. The coding region of Snai1 is regulated by the CMV promoter. This plasmid also contains a mCherry coding region to measure transfection efficiency on a cytometer. We used similarly designed plasmids for transfecting Jun, Egr1 and Prrx1 by replacing with the respective coding sequence.
   
     }
@@ -394,7 +393,7 @@ Hprt-rev & CCAGTTTCACTAATGACACAAACG \\
 \begin{suppfigure}[p]  
     \centering
     \includegraphics[width=\linewidth]{figures/hedgehog/SuppFigure13.png}
-    \caption[caption1]{
+    \caption[Plasmid design for Snai1, Prrx1 lentiviral transduction]{
         Construct for Prrx1 pInducer induction. Lentiviruses were generated using this plasmid. We used the same design for Snai1 by replacing the coding region of Prrx1 with the coding region of Snai1.  
     }
     \label{fig:hh_figureS13}
@@ -404,7 +403,7 @@ Hprt-rev & CCAGTTTCACTAATGACACAAACG \\
 \begin{suppfigure}[p]  
     \centering
     \includegraphics[width=\linewidth]{figures/hedgehog/SuppFigure14.png}
-    \caption[caption1]{
+    \caption[Plasmid design for Srebf2 lentiviral transduction]{
         Construct for Srebf2 pInducer induction. Lentiviruses were generated using this plasmid.  
     }
     \label{fig:hh_figureS14}
@@ -414,7 +413,7 @@ Hprt-rev & CCAGTTTCACTAATGACACAAACG \\
 \begin{suppfigure}[p]  
     \centering
     \includegraphics[width=\linewidth]{figures/hedgehog/SuppFigure15.png}
-    \caption[caption1]{
+    \caption[qPCR induction plots for Prrx1, Srebf2 and Snai1]{
         Induction of Prrx1, Srebf2 and Snai1. Cell lines with inducible Prrx1(a), Srebf2 (b) and Snai1 (c) were treated with Doxycycline to induce the expression of the three genes. After 26.5 hours, we harvested the cells and used the RNA for qPCR assays. We used cells with no Doxycycline added as controls. We compared RNA levels in each condition to the housekeeping control gene Hprt.  
     }
     \label{fig:hh_figureS15}
@@ -425,7 +424,7 @@ Hprt-rev & CCAGTTTCACTAATGACACAAACG \\
 \begin{suppfigure}[p]  
     \centering
     \includegraphics[width=\linewidth]{figures/hedgehog/SuppFigure16.png}
-    \caption[caption1]{
+    \caption[Raw data for the Prrx1 induced and uninduced cells shown in Figure 3A]{
         Raw cytometer plots for the data summarized in Figure 3A. Prrx1 inducible cells were grown in the presence and absence of Dox, treated with SAG and run on a cytometer at 32 hours. Three biological replicates were used for each condition.  
     }
     \label{fig:hh_figureS16}
@@ -435,7 +434,7 @@ Hprt-rev & CCAGTTTCACTAATGACACAAACG \\
 \begin{suppfigure}[p]  
     \centering
     \includegraphics[width=\linewidth]{figures/hedgehog/SuppFigure17.png}
-    \caption[caption1]{
+    \caption[No difference in percent green for Prrx1 induction followed by SAG treatment - Clones 2, 3]{
         Additional clones showing difference in response after Prrx1 induction. Shown are the mean percentage responders (in red) +/- standard error of the mean.  
     }
     \label{fig:hh_figureS17}
@@ -445,7 +444,7 @@ Hprt-rev & CCAGTTTCACTAATGACACAAACG \\
 \begin{suppfigure}[p]  
     \centering
     \includegraphics[width=\linewidth]{figures/hedgehog/SuppFigure18.png}
-    \caption[caption1]{
+    \caption[No difference in percent green for Snai1 induction followed by SAG treatment]{
         No difference in hedgehog assay response after Snai1 induction. We grew cells integrated with inducible Snai1 in the presence and absence of Doxycycline. We performed the Hedgehog assay on the two groups (three replicates each) of cells by adding SAG and observing the percent of cells that respond on the flow cytometer after 32 hours. We did this for three separate clones after transduction. Shown are the mean percentage of responders (in red) +/- standard error of the mean.
     }
     \label{fig:hh_figureS18}
@@ -455,7 +454,7 @@ Hprt-rev & CCAGTTTCACTAATGACACAAACG \\
 \begin{suppfigure}[p]  
     \centering
     \includegraphics[width=\linewidth]{figures/hedgehog/SuppFigure19.png}
-    \caption[caption1]{
+    \caption[No difference in percent green for Srebf2 induction followed by SAG treatment]{
         No difference  in hedgehog assay response after Srebf2 induction. We grew cells integrated with inducible Srebf2 in the presence and absence of Doxycycline. We used three different concentrations of Dox. Cells did not survive in the presence of 1X and 0.1X Dox. In this figure, 1X Dox is the same concentration of Dox used for Prrx1 and Snai1 (500 ng/ml). We performed the hedgehog assay on the two groups (three technical replicates each) of cells by adding SAG and observing the percent of cells that respond on the flow cytometer after 46 hours. We did this for three separate clones after transduction.  Shown are the mean percentage responders (in red) +/- standard error of the mean.  
     }
     \label{fig:hh_figureS19}
@@ -465,7 +464,7 @@ Hprt-rev & CCAGTTTCACTAATGACACAAACG \\
 \begin{suppfigure}[p]  
     \centering
     \includegraphics[width=\linewidth]{figures/hedgehog/SuppFigure20.png}
-    \caption[caption1]{
+    \caption[Flow Cytometry results for cells used in Prrx1 induction single-cell RNA sequencing experiment]{
         Response of Prrx1 induced and induced cells from the same pool as the cells used for the single-cell RNA sequencing experiments in Figure 4 (A) Percentage responding cells(GFP fluorescence) on a cytometer summarized  at 0 (untreated), 19 and 30 hours. (B), (C ), (D)Raw cytometer plots for the same cells in (A) in the no Dox condition. (E), (F), (G) Raw cytometer plots for the same cells in (A) grown in the Dox condition. This figure show one replicate at each condition used in the single-cell RNA sequencing experiment, biological replicates of Prrx1-induction response result is shown in Figure 3 and Supplementary Figure 13. 
     }
     \label{fig:hh_figureS20}
@@ -475,7 +474,7 @@ Hprt-rev & CCAGTTTCACTAATGACACAAACG \\
 \begin{suppfigure}[p]  
     \centering
     \includegraphics[width=\linewidth]{figures/hedgehog/SuppFigure21.png}
-    \caption[caption1]{
+    \caption[Predicted slow and fast responder cells using Garnett in the Prrx1 +/- Dox untreated cells]{
         Predicted fast and slow responders from Garnett.
         We trained a cell-type classifier on the fast and slow responder cells in Figure 1 to learn the features of fast and slow responders. We next applied this trained classifier on untreated (0 hours) cells with inducible Prrx1, used in Figure 4, to identify the fast and slow responders in this population. (A) and (B) show the slow and fast responders identified by the model in the untreated cells grown in the absence of Dox. In the cells grown in the absence of Dox, the classifier identifies a mixture of slow and fast responders. © and (D) show the slow and fast responders identified by the model in the untreated cells grown in the presence of Dox. In the cells grown in the presence of Dox, most of the cells are classified as fast reponders by the classifier.         
     }
