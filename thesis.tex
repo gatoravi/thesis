@@ -46,17 +46,24 @@
 \usepackage{newfloat}
 \DeclareFloatingEnvironment[
     fileext=lof,
-    name=Figure,
+    name=Supplementary Figure,
     placement=tbhp,
     within=chapter,
 ]{suppfigure}
-\DeclareFloatingEnvironment[name={Supplementary Table},within=chapter,placement=tbhp,fileext=lsf,listname={List of Supplementary Tables}]{supptable} % Set up supplementary figures
+\DeclareFloatingEnvironment[
+    name={Supplementary Table},
+    within=chapter,
+    placement=tbhp,
+    fileext=lsf,
+    listname={List of Supplementary Tables}
+]{supptable} % Set up supplementary table
+
 % Add newcommand to set up the numbering of supplementary figures and tables
 \newcommand{\beginsupplement}{%
-        \setcounter{table}{0}
-        \renewcommand{\thetable}{S\arabic{table}}%
-        \setcounter{figure}{0}
-        \renewcommand{\thefigure}{S\arabic{figure}}%
+         \setcounter{table}{0}
+%        \renewcommand{\thetable}{S\arabic{table}}%
+         \setcounter{figure}{0}
+%        \renewcommand{\thefigure}{S\arabic{figure}}%
 }
 
 
@@ -112,7 +119,7 @@
 
 
 % Configure title page
-\settitle{Understanding the sources and consequences of cell-to-cell variability in gene expression}
+\settitle{Sources and consequences of cell-to-cell variability in gene expression}
 \setauthor{Avinash Ramu}
 \setthesistype{Dissertation}
 \setthesisdegree{Doctor of Philosophy}
@@ -135,7 +142,7 @@
 % Configure PDF metadata
 \hypersetup{
     pdftitle={%
-        Causes and consequences of cell-to-cell variability of gene expression.
+        Sources and consequences of cell-to-cell variability in gene expression.
     },
     pdfauthor={\thesisauthor},
 }
