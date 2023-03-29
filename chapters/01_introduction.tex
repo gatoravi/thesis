@@ -2,10 +2,16 @@
 \label{chap:introduction}
 \tightlists
 
+The main goal of a geneticist is to understand how genotype results in phenotype. These can be phenotypes at any level, for example at the cellular level, tissue level or organismic level. We know that DNA sets the blueprint for all the phenotypes for an organism. The main intermediate in this process is gene expression. DNA gets transcribed to RNA and these are translated to proteins, and these are the molecules that set up life as we know it - both inside and around ourself. We function as who we are due to the action of these DNA, proteins and RNA.
 
-\subsection{Notes}
+So, to understand how genotype translates to phenotypes it is key to understand gene expression. There are indeed a large number of research programs devoted to understanding gene expression. This thesis also attempts to answer a question related to gene expression. Specifically, how is gene expression regulated amongst a population of cells?
 
-The main goal is to go from genotype to phenotype
+Let's peek inside a single-cell. In most cell-types in a human body there are two copies of each chromosome. A small part, about 1\% of this DNA is what codes for proteins \cite {human genome}. Through a series of molecular steps that we don't quite yet understand, genes are turned on and off in a precise manner during development. It is this precise turning on and off of genes that generates a whole organism from a single-cell and the multitude of cell-types and organisms inside and around us. When we hear of such precision, one might think of a well oiled machine that is entirely predictable. A machine that turns on and off in an entirely predictable manner within a cell. But this is not what we observe.
+
+We have become really good at measuring gene expression both in a population of cells \cite{bulk rnaseq, }, and now within a single-cell \cite{single-cell, flow cityu, smFish}. If it were true that the gene expression operates in a predictable manner, if we start with a single cell and follow gene expression in it's daughter cells, the cells would express identical amounts of RNA and protein. However this is not what one observes \cite{elowitz} There is a tremendous amount of cell-to-cell variability in gene expression amongst a population of cells. This thesis deals with understanding this cell-to-cell variability - how does this cell-to-cell variability come about i.e its sources, and does this variability have any phenotypic impact i.e its consequences.
+
+\section {What does cell-to-cell variability in gene expression variability look like?}
+
 How does an organism get made from just a collection of proteins and mRNA
 Gene regulation underlies all of life
 How does this happen
@@ -25,19 +31,12 @@ Variability and memory of protein levels in human cells - this argues that genes
 
 The main goal i     
 
-
-
-Over the past few decades we have made huge advances in sequencing genomes. We now have  comprehensive catalogs of common and rare variation in humans and a few other species. These results have encouraged pursuits in synthetic biology and precision medicine. However, these pursuits have exposed the reality that we are still limited in our understanding of how genomic sequences reliably specify function. 
-
 We now know that genetically identical cells grown in the same environment express different amounts of the same gene. Cell-to-cell variability has been shown to be functionally important. For example, individual cells in a population of stem cells differ in their differentiation potential \cite{chang_transcriptome-wide_2008}. When cells with the same genotype behave differently, this limits our ability to design drugs to target diseased cells and hinders our ability to design synthetic biological circuits that perform reliably over a period of time \cite{elowitz_synthetic_2000}. In order to understand biological systems, we need to understand the sources and extent of this cell-to-cell variability.
 
 Work done in the previous decade using two copy reporters in E. Coli \cite{elowitz_stochastic_2002} and Yeast \cite{raser_control_2004} showed that cell-to-cell variability of gene expression is prevalent. To date, most of the work in understanding cell-to-cell variability has been done using reporters attached to a single gene or a few genes. How much of the variability at one locus is shared across different genes in the genome is still not well understood. I will address this question in *Aim 1*.
 
 
-
-\subsection{Background}
-
-\subsection{Gene expression variability exists amongst cells}
+\section{Gene expression variability exists amongst cells}
 
 Gene expression is the result of probabilistic interactions between molecules in the cell. These molecules include the two copies of DNA, transcription factors, RNA polymerase amongst others. The low numbers of molecules involved in transcription results in  variable gene expression across cells and time. It is still a mystery how in the presence of these gene expression fluctuations biological systems function in an orderly manner.
 
@@ -52,7 +51,8 @@ In 2002, Elowitz et al.  \cite{elowitz_stochastic_2002} showed using two-colored
 - talk about Ido golding
 
 
-\subsection{Cell-to-Cell variability can result in functional differences}
+\section{Cell-to-Cell variability can result in functional differences}
+
 An increase in cell-to-cell variability in gene expression has been observed in cells undergoing differentiation. Richard et al.  \cite{richard_single-cell-based_2016} looked at a well-studied differentiation system of chicken erythroid progenitors differentiating into erythrocytes. The authors showed that chicken erythroid cells show an increase in variability of gene expression of relevant genes prior to differentiation. Similar results were obtained by Mojtahedi et al  \cite{mojtahedi_cell_2016} while studying the differentiation of murine heamatopoetic progenitor cells into myeloid or erythroid cells. The authors hypothesize that this surge in variability allows the cells to transition out of stable cell-states and transition to different cell-states. 
 
 
@@ -70,27 +70,43 @@ In bacteria, individual bacterium often display a persistor phenotype and grow a
 - Talk about selction on noise
 - wittkopp paper
 
-\subsection{Single-cell RNA sequencing allows detection of cell-to-cell variability }
+\section{Single-cell RNA sequencing allows detection of cell-to-cell variability}
 
 - advent of single-cell rnaq-seq
 - talk about trajectory analysis
 - talk about noise using scRNAseq
 - talk about reprogramming inefficiency
+
 RNA sequencing can be used as a readout of functional cell-states. A prominent example is the work by Chang et al.  \cite{chang_transcriptome-wide_2008}. Chang et al. isolated mouse heamatopoetic progenitors with different levels of a haematopoetic stem-cell marker Sca-1.  Sca1 expression showed reproducible variability across cells that was not just due to technical error in measurement. The authors used microarrays to show that cells with low amounts of Sca-1 had different transcriptomes compared to cells with low amounts of Sca-1. Furthermore, cells with higher levels of Sca-1 have an increased likelihood of differentiation towards the Myeloid lineage while cells with low amounts of Sca-1 are more prone to differentiate towards the Erythroid lineage. Similar examples have been observed for embryonic mouse cells with different amounts of a stem-cell marker Nanog \cite{kalmar_regulated_2009}. The authors showed that cells with low levels of Nanog exhibit increased variability in gene expression and are prone to differentiate.
 
 A well-studied example of cells in different cell-states is the cell-cycle. Cells in different stages of the cell-cycle express genes that are charaterestic of that stage. Single-cell RNA sequencing has been used to infer cell-cycle stage \cite{buettner_computational_2015,leng_oscope_2015}. A recent study suggests that cell-cycle stage can now be inferred on a continuum  \cite{hsiao_characterizing_2019}. These results demonstrate that sequencing RNA can be used to identify cells in different cell-states.  \cite{trapnell_defining_2015,shaffer_memory_2018,sharma_chromatin-mediated_2010}
 
-\subsection{Modeling cell-state transitions}
-
 Computational modeling approaches are important to understand expression differences between single-cells. The single-cell RNA seq data gives us a static snapshot of a dynamic process. Every cell on a PCA plot is a summary of an enormous number of events. These cells are transitioning through different cell-types in a differentiating system or through different cell-states within a homogenous cell-type population. A commonly used approach to understand this dynamical process is to cluster cells with similar transcriptomes together. The predicted paths of cellular trajectories are inferred by drawing a principal curve through the cells. By correlating the expression patterns with known biology we can infer the processes active in these cells. \cite{trapnell_dynamics_2014}. Another recently developed method called RNA-velocity allows us to infer the near-term future transcriptome of cells. This is done by fitting a kinetic model to the ratio of spliced to unspliced transcripts of each gene. This allows the number of inferred transcript counts of different genes to be estimated. The inferred transcriptome is then plotted on a PCA or tSNE plot to infer the position where a given cell's transcriptome is headed.  \cite{manno_rna_2018} Cell state transitions are often modeled as Markov processes \cite{stumpf_stem_2017}, the RNA-velocity approach can be used to infer transition rates in a Markov process. Using such computational models can help answer interesting questions. For example, we can try to understand the proportion of time cells spend in a cell-state or cell-type, how many cell-states can explain the observed data  \cite{chang_transcriptome-wide_2008}, what are the characteristic markers of different cell-types and what are the genes are driving cell-state transitions \cite{furchtgott_discovering_2017}.
 
 Most of the studies described above have looked at variability of reporters at a locus and compared it to the variability at other loci. We still need to understand if this variability is linked to cell-state and if the variability is shared among genes in a pathway. In a similar vein, most of the single-cell RNA sequencing approaches have been done to understand the variability between multiple cell-types. However, we still don't understand the sources and extent of the variability that exists within a single-cell type. This proposal tackles these two questions
+
 Recently single-cell sequencing studies have established that substantial variability in gene expression exists amongst different cell types. However, these studies have also shown that there is variability between cells of the same cell type. It is not well understood what are the sources of this variability. We need to understand if this variability is due to neutral drift in gene expression or if there are functional cell states within a cell-type.
-\subsection{Sources of Cell-to-Cell variability}
+
 - Talk about the Rickard sandberg paper
 - talk about TRIP
 
-\subsubsection{Genetic control of noise}
+\section{Genetic control of noise}
+
+
+%figure1
+\begin{figure}[t!]  
+    \centering
+    \phantomlabel{fig:intro_figure1a}
+    \includegraphics[width=\linewidth, scale=0.5]{figures/intro/intro_outlier1.png}
+    \caption[]{%
+        \textbf{}
+        \subref{fig:intro_figure1a}
+        Schematic for expression change detection in the transcriptome data.
+     
+    }
+    \label{fig:outliervariance}
+\end{figure}
+
 An important question that still remains to be answered is are the mean and noise controlled by different genetic regulatory elements.
 We have made a lot of progress in identifying loci that are associated with the mean level of expression \cite{gtex_consortium_genetic_2017} \cite{eqtlgen} \cite{more}. These studies have identified eQTLs for almost every gene in the genome \cite{} About half of all GWAS hits can now be mapped to eQTLs \cite{}. However this only looks at the mean level of expression. Could a similar approach be used to find loci that find variance QTLs?
 
@@ -99,72 +115,49 @@ Studies have looked explicitly for variance QTLs. Sarkar et al. tried to find va
 Prior to the publication of the study by Sarkar et al. I also looked at the single-cell data from their group through a collaboration with their group. I looked at cell-to-cell variability using different approaches. My variance QTL analysis also detected variance QTLs that were explained entirely by mean QTLs. I also looked at every gene's expression for every individual, and tried to find genes whose variance in gene expression was disproportionate to their mean levels. I found a set of genes that had abnovmal variance (shown in red in \fref{fig:intro_figure1}). However upon closer inspection, many of the genes that displayed this property were enriched for Mitochondrial genes. It is a known observation in single-cell 
 RNA sequencing that cells that are prone to dying exhibit higher levels of mitochondrial transcripts \cite {seurat}, hence we did not follow up on this finding.
 
-%figure1
-\begin{figure}[t!]  
-    \centering
-    \phantomlabel{fig:intro_figure1a}
-    \includegraphics[width=\linewidth, scale=0.5]{figures/intro/intro_outlier1.png}
-    \caption[SARGENT measures the insertion effect of a transgene.]{%
-        \textbf{SARGENT measures the insertion effect of a transgene.}
-        \subref{fig:intro_figure1a}
-        Schematic for expression change detection in the transcriptome data.
-     
-    }
-    \label{fig:outliervariance}
-\end{figure}
 
 
 Francesca et al. used 10X scRNA-seq data from X sampels and attempted to find QTLs. They found. 
 
 
-- Talk about Yoav's paper. The search for variance QTLs. Francesca's paper
-
-\subsubsection{Selection on noise levels}
-
-\subsubsection{Noise in transcription factors}
-It remains to be well understood how the noise in the upstream regulators of a pathway propagates through a pathway. Chang et al. \cite {sui_huang} showed that the variation in the transcription factor can have an effect on which way a cell differentiates.
-
-
-Genetically identical yeast when grown in the same environment express different amounts of the same
-protein. The stochasticity is due to biochemical fluctuations in the small number of molecules involved in
-gene expression. In this Aim, I will address the question of whether the observed variability in the expression
-of a gene is shared with other genes in the genome. Most studies of gene expression stochasticity have focused
-on one locus or a few loci with a synthetic or endogenous gene. These studies have established that most
-of the variance at a locus is due to cell-to-cell variability4. However, it is not known if cells with different
-amounts of a protein are in different cell-states. Aim1 will address these questions.
-
-We looked at the fluctuations in the transcriptionf actor 
+\section{Selection on noise levels}
 
 
 
 
+\section{Noise in transcription factors}
 
 %figure1
 \begin{figure}[t!]  
     \centering
     \phantomlabel{fig:intro_figure2a}
     \includegraphics[width=\linewidth, scale=0.5]{figures/intro/intro_gfp_density_X.pdf}
-    \caption[SARGENT measures the insertion effect of a transgene.]{%
-        \textbf{SARGENT measures the insertion effect of a transgene.}
+    \caption[Distribution of Protein X across cells.]{%
+        \textbf{Distribution of Protein X across cells.}
         \subref{fig:intro_figure2a}
-        Schematic for expression change detection in the transcriptome data.
-     
     }
     \label{fig:gfpXdensity}
 \end{figure}
 
+It remains to be well understood how the noise in the upstream regulators of a pathway propagates through a pathway. Chang et al. \cite {sui_huang} showed that the variation in the transcription factor can have an effect on which way a cell differentiates.
 
+
+\section{Sources of noise}
+
+\subsection{Effect of chromatin on mean and noise}
+
+\subsection{Effect of sequence features on noise}
+
+\subsection{ Is the variability shared between genes in the same pathway}
 
 %figure1
 \begin{figure}[t!]  
     \centering
     \phantomlabel{fig:intro_figure3a}
-    \includegraphics[width=\linewidth, scale=0.5]{figures/intro/intro_aim1_task1.pdf}
-    \caption[SARGENT measures the insertion effect of a transgene.]{%
-        \textbf{SARGENT measures the insertion effect of a transgene.}
-        \subref{fig:intro_figure3}
-        Schematic for expression change detection in the transcriptome data.
-     
+    \includegraphics[width=\linewidth, scale=0.5]{figures/intro/intro_clustering_expectedresults.pdf}
+    \caption[]{%
+        \textbf{}
+        \subref{fig:intro_figure3}     
     }
     \label{fig:aim1_task1}
 \end{figure}
@@ -175,22 +168,18 @@ We looked at the fluctuations in the transcriptionf actor
 \begin{figure}[t!]  
     \centering
     \phantomlabel{fig:intro_figure4a}
-    \includegraphics[width=\linewidth]{figures/intro/intro_tdh2_pca.pdf}
-    \caption[SARGENT measures the insertion effect of a transgene.]{%
-        \textbf{SARGENT measures the insertion effect of a transgene.}
+    \includegraphics[width=\linewidth]{figures/intro/intro_tdh2_clustering_observed.pdf}
+    \caption[]{%
+        \textbf{}
         \subref{fig:intro_figure4a}
-        Schematic for expression change detection in the transcriptome data.
-     
     }
     \label{fig:tdh2_pca}
 \end{figure}
-\subsubsection{Effect of chromatin on mean and noise}
-\subsubsection{Effect of sequence features on noise}
-
-\subsection{ Is teh variability shared betwen pathway members}
 Talk about your TDH3 results here. Also setup for the cell-state story of CAS.
 
-\subsection{Scope of thesis work}
+
+\section{Scope of thesis work}
+
 This thesis consists of two main works.
 
 In  Chapter 2 I will try to explain the sources of variability observed within a cell-type. I will test the hypothesis that cells of the same cell-type express different subsets of genes due to stochastic activation of upstream regulators. Specifically, I will test the hypothesis that stochastic expression of transcription factors and stochastic activation of signaling pathways leads to variability between cells of the same cell-type.
