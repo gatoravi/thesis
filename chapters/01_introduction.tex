@@ -8,7 +8,7 @@ So, to understand how genotype translates to phenotypes it is key to understand 
 
 Let's peek inside a single-cell. In most cell-types in a human body there are two copies of each chromosome. A small part, about 1\% of this DNA is what codes for proteins \cite {human genome}. Through a series of molecular steps that we don't quite yet understand, genes are turned on and off in a precise manner during development. It is this precise turning on and off of genes that generates a whole organism from a single-cell and the multitude of cell-types and organisms inside and around us. When we hear of such precision, one might think of a well oiled machine that is entirely predictable. A machine that turns on and off in an entirely predictable manner within a cell. But this is not what we observe.
 
-We have become really good at measuring gene expression both in a population of cells \cite{bulk rnaseq, }, and now within a single-cell \cite{single-cell, flow cityu, smFish}. If it were true that the gene expression operates in a predictable manner, if we start with a single cell and follow gene expression in it's daughter cells, the cells would express identical amounts of RNA and protein. However this is not what one observes \cite{elowitz} There is a tremendous amount of cell-to-cell variability in gene expression amongst a population of cells. This thesis deals with understanding this cell-to-cell variability - how does this cell-to-cell variability come about i.e its sources, and does this variability have any phenotypic impact i.e its consequences.
+We have become really good at measuring gene expression both in a population of cells \cite{bulk rnaseq, }, and now within a single-cell \cite{single-cell, flow cityu, smFish}. If it were true that the gene expression operates in a predictable manner, if we start with a single cell and follow gene expression in it's daughter cells, the cells would express identical amounts of RNA and protein. However this is not what one observes \cite{elowitz} There is a tremendous amount of cell-to-cell variability in gene expression amongst a population of cells. This thesis deals with understanding this cell-to-cell variability - how does this cell-to-cell variability come about i.e its sources, and does this variability have any phenotypic impact i.e its consequences. In this thesis, I will use cell-to-cell variability in gene expression and gene expression noise interchangeably.
 
 \section {What does cell-to-cell variability in gene expression variability look like?}
 
@@ -92,7 +92,6 @@ Recently single-cell sequencing studies have established that substantial variab
 
 \section{Genetic control of noise}
 
-
 %figure1
 \begin{figure}[t!]  
     \centering
@@ -115,15 +114,22 @@ Studies have looked explicitly for variance QTLs. Sarkar et al. tried to find va
 Prior to the publication of the study by Sarkar et al. I also looked at the single-cell data from their group through a collaboration with their group. I looked at cell-to-cell variability using different approaches. My variance QTL analysis also detected variance QTLs that were explained entirely by mean QTLs. I also looked at every gene's expression for every individual, and tried to find genes whose variance in gene expression was disproportionate to their mean levels. I found a set of genes that had abnovmal variance (shown in red in \fref{fig:intro_figure1}). However upon closer inspection, many of the genes that displayed this property were enriched for Mitochondrial genes. It is a known observation in single-cell 
 RNA sequencing that cells that are prone to dying exhibit higher levels of mitochondrial transcripts \cite {seurat}, hence we did not follow up on this finding.
 
-
-
 Francesca et al. used 10X scRNA-seq data from X sampels and attempted to find QTLs. They found. 
 
 
 \section{Selection on noise levels}
 
+A long-standing question is whether the cell-to-cell variability of different genes are under natural selection, or does selection act only at the mean level. The alternate hypothesis is that the noise is just unconstrained by selection and all the selection acts on the mean level of expression. As discussed in the previous section, we are now beginning to identify regulatory elements that are associated with noise but not mean levels. If these regulatory elements are under selection, or if they are conserved across species, these could indicate a possible important functional role for noise that's independent of the mean level of expression of that gene. Some studies have explored this question.
 
+Newman et al. \cite{Newman} measured the noise level for 2500 genes in the the yeast genome under rich and minimal media conditions. They did this by GFP-tagging each gene and measuring the fluorescence level on a cytometer. This collection of GFP-tagged yeast strains has been an invaluable resource, and indeed I used a couple of strains from this project for my early exploratory noise projects that I described in this chapter. Newman et al. found that proteins that respond to environmental cues are more noisy than other groups of genes like housekeeping genes. Zhang et al. \cite{Zhang} confirm this observation for plasma transporter genes and use mathematical models to argue that higher noise promotes evolvability of favourable gene expression levels, and could be under positive selection. 
 
+Fraser et al. \cite{Fraser} looked at noise in two classes of genes in yeast - essential genes, and genes involved in protein complex subunits and compared the noise levels in these two groups to the rest of the genes in the genome. They estimated protein production rates, and transcription rates for every gene in the genome and found that the essential genes and the genes that are part of protein complexes display a lower rate of translation, and a high rate of transcription and decay - a strategy that minimizes noise. The authors speculate that this strategy might have been an evolutionary mechanism to minimize noise in genes that are essential to life.
+
+Batada et al. \cite{Batada} asked whether genes that are essential are in regions are in regions of the genome that have low nucleosome occupancy, and whether noise-sensitive genes cluster with essential genes in the genome. They reason that genes that are essential might have evolved to be in regions of the genome that are less noisy. Using Myc-tagged histone data they indeed find an anti-corrrelation between regions of high essential gene density and nucleosome occupancy. They find a dearth of essential genes in subtelomeric regions which are high noise regions of the yeast genome.
+
+Metzger et al. \cite{Metzger} have looked at the promoter of a yeast enzyme that is involved in glucose metabolism in multiple yeast species. They looked at both polymorphisms that have fixed after undergoing selection through time and new mutations, induced through mutagenesis, which have not yet undergone seleection. They find that the polymorphisms have a slightly smaller effect size on the noise level compared to new mutations, suggesting the action of selection in removing some of the noise affecting polymorphisms in the TDH3 promoter. Naturally occuring haplotypes show lower amounts noise than what would be expected under neutral evolution.
+
+The studies cited in this section have looked for signatures of selection acting specifically on the noise level. However for some of these studies it is impossible to attribute this signal entirely to the variability, and not to the mean. Indeed, most of these studies don't rule out alternative explanations for the signals of selection that are observed in the discussion sections.
 
 \section{Noise in transcription factors}
 
@@ -139,7 +145,7 @@ Francesca et al. used 10X scRNA-seq data from X sampels and attempted to find QT
     \label{fig:gfpXdensity}
 \end{figure}
 
-It remains to be well understood how the noise in the upstream regulators of a pathway propagates through a pathway. Chang et al. \cite {sui_huang} showed that the variation in the transcription factor can have an effect on which way a cell differentiates.
+It remains to be well understood how the noise in the upstream regulators of a pathway propagates through a pathway. Chang et al. \cite {sui_huang} showed that the variation in the transcription factor \emph{Sca1}  can have an effect on which way a cell differentiates.
 
 
 \section{Sources of noise}
@@ -177,11 +183,11 @@ It remains to be well understood how the noise in the upstream regulators of a p
 \end{figure}
 Talk about your TDH3 results here. Also setup for the cell-state story of CAS.
 
+\section{Recent developments in the noise field}
+
 
 \section{Scope of thesis work}
 
-This thesis consists of two main works.
+This thesis consists of two main chapters. In  Chapter 2 I will try to explain the source of phenotypic variability observed within a cell-type. I will test the hypothesis that cells of the same cell-type express different subsets of genes due to stochastic activation of upstream regulators. Specifically, I will test the hypothesis that stochastic expression of transcription factors and stochastic activation of signaling pathways leads to variability between cells of the same cell-type.
 
-In  Chapter 2 I will try to explain the sources of variability observed within a cell-type. I will test the hypothesis that cells of the same cell-type express different subsets of genes due to stochastic activation of upstream regulators. Specifically, I will test the hypothesis that stochastic expression of transcription factors and stochastic activation of signaling pathways leads to variability between cells of the same cell-type.
-
-In Chapter 3, I aim to understand what determines the noise levels of different genes in the genome. In collaboration with two other graduate students I devised a new genomic technology called SARGENT (Single-cell Analysis of Reporter Gene Expression Noise and Transcriptome) to study noise genome-wide. Using SARGENT, we integrats the same reporter gene in multiple genomic locations and measure the cell-to-cell variability in expression of this reporter gene using single-cell RNA sequencing. We then attempt to understand the determinants of this noise, after removing the effect of the mean level of expression, using the chromatin state and sequence features at different genomic locations. We also decompose the variability into extrinsic and intrinsic noise, and understand the determinants of these two noise sources. SARGENT also allows us to identify cell-states and quantify the impact of cell-states on noise.
+In Chapter 3, I aim to understand what determines the noise levels of different genes in the genome. In collaboration with two other graduate students I developed a new genomic technology called SARGENT (Single-cell Analysis of Reporter Gene Expression Noise and Transcriptome) to study noise across genomic locations. Using SARGENT, we integrate the same reporter gene in multiple genomic locations and measure the cell-to-cell variability in expression of this reporter gene using single-cell RNA sequencing. We then attempt to understand the determinants of this noise, after removing the effect of the mean level of expression, using the chromatin state and sequence features at different genomic locations. We also decompose the variability into extrinsic and intrinsic noise, and understand the determinants of these two noise sources. SARGENT also allows us to identify cell-states and quantify the impact of cell-states on noise.
