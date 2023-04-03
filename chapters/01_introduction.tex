@@ -2,7 +2,7 @@
 \label{chap:introduction}
 \tightlists
 
-The main goal of a geneticist is to understand how genotype results in phenotype. These can be phenotypes at any level, for example at the cellular level, tissue level or organismic level. We know that DNA sets the blueprint for all the phenotypes for an organism. The main intermediate in this process is gene expression. DNA gets transcribed to RNA and these are translated to proteins, and these are the molecules that set up life as we know it - both inside and around ourself. We function as who we are due to the action of these DNA, proteins and RNA.
+As a geneticist, my main goal is to shed more light on how genotype results in phenotype. These can be phenotypes at any level, for example at the cellular level, tissue level or organismic level. We know that DNA sets the blueprint for all the phenotypes of an organism. The first and arguably one of the most important steps in the process of going from DNA to cellular machines is gene expression. DNA gets transcribed to RNA and these are then translated to proteins, and these are the molecules that set up life as we know it - both inside us and around ourself. We function as who we are due to the concerted action of these DNA, proteins and RNA.
 
 So, to understand how genotype translates to phenotypes it is key to understand gene expression. There are indeed a large number of research programs devoted to understanding gene expression. This thesis also attempts to answer a question related to gene expression. Specifically, how is gene expression regulated amongst a population of cells?
 
@@ -18,15 +18,12 @@ How does this happen
 We go from DNA to RNA to protein
 How much does variation in gene expression matter for phenotype
 
-- thesis is split into two sections, noise in a single reporter affecting phenotype and how is noise specified across different genes.
 - talk about Arjun's cancer papers
 - talk about sui huang papers
 
 
 CAS chapter - - sources of noise
-- include Roy Wollman's paper for the CAS chapter. 
-    - Says that the cell-state explains most of the variance. Things like volume, differntiation state, cell cycle, amount and timing of Ca+2 activation.
-Variability and memory of protein levels in human cells - this argues that genes in the same pathway share variability.
+
 
 
 The main goal i     
@@ -53,8 +50,13 @@ In 2002, Elowitz et al.  \cite{elowitz_stochastic_2002} showed using two-colored
 
 \section{Cell-to-Cell variability can result in functional differences}
 
-An increase in cell-to-cell variability in gene expression has been observed in cells undergoing differentiation. Richard et al.  \cite{richard_single-cell-based_2016} looked at a well-studied differentiation system of chicken erythroid progenitors differentiating into erythrocytes. The authors showed that chicken erythroid cells show an increase in variability of gene expression of relevant genes prior to differentiation. Similar results were obtained by Mojtahedi et al  \cite{mojtahedi_cell_2016} while studying the differentiation of murine heamatopoetic progenitor cells into myeloid or erythroid cells. The authors hypothesize that this surge in variability allows the cells to transition out of stable cell-states and transition to different cell-states. 
+- Break the paragraphs by in-vivo, fish, worm, cell-lines etc.
 
+Recently work from 
+
+
+
+An increase in cell-to-cell variability in gene expression has been observed in cells undergoing differentiation. Richard et al.  \cite{richard_single-cell-based_2016} looked at a well-studied differentiation system of chicken erythroid progenitors differentiating into erythrocytes. The authors showed that chicken erythroid cells show an increase in variability of gene expression of relevant genes prior to differentiation. Similar results were obtained by Mojtahedi et al  \cite{mojtahedi_cell_2016} while studying the differentiation of murine heamatopoetic progenitor cells into myeloid or erythroid cells. The authors hypothesize that this surge in variability allows the cells to transition out of stable cell-states and transition to different cell-states. 
 
 Other examples have shown that genetically identical cells don't all reprogram at the same rate. Hanna and Saha et al. showed that reprogramming of somatic cells to iPSCs is stochastic with a random subset of initial cells completing reprogramming  \cite{hanna_direct_2009}. The authors showed that eventually all somatic cells reprogram to pluripotent stem cells when induced with transcription factors but the rate at which cells reprogram can be increased by increasing the cell-division rate. Similar stochasticity has been observed when fibroblasts were reprogrammed into induced endoderm progenitor cells \cite{biddy_single-cell_2018}.
 
@@ -62,13 +64,9 @@ Variability in phenotype has also been shown to be functionally important at the
 
 In bacteria, individual bacterium often display a persistor phenotype and grow at slower rates by expressing different subsets of genes. This confers the bacteria an ability to survive adverse changes such as antibiotic treatment that might otherwise terminate a homogenous population \cite{veening_bet-hedging_2008}. In yeast, variability has been observed in the utilization of the sugar galactose. The Gal genes that are responsible for the metabolism of galactose pathway display a bimodal expression pattern \cite{acar_enhancement_2005}. This bimodality has been explained using stochastic modelling of the expression of genes in this pathway. These results all show how biological variability, arising from variability in gene expression, can have functional consequences. 
 
-- talk about Wernet2006
-- Talk about greenwald
-- Talk about Arjun's cells
-- Break teh paragraphs by in-vivo, fish, worm, cell-lines etc.
 
-- Talk about selction on noise
-- wittkopp paper
+- Talk about Arjun's cells
+
 
 \section{Single-cell RNA sequencing allows detection of cell-to-cell variability}
 
@@ -85,10 +83,13 @@ Computational modeling approaches are important to understand expression differe
 
 Most of the studies described above have looked at variability of reporters at a locus and compared it to the variability at other loci. We still need to understand if this variability is linked to cell-state and if the variability is shared among genes in a pathway. In a similar vein, most of the single-cell RNA sequencing approaches have been done to understand the variability between multiple cell-types. However, we still don't understand the sources and extent of the variability that exists within a single-cell type. This proposal tackles these two questions
 
-Recently single-cell sequencing studies have established that substantial variability in gene expression exists amongst different cell types. However, these studies have also shown that there is variability between cells of the same cell type. It is not well understood what are the sources of this variability. We need to understand if this variability is due to neutral drift in gene expression or if there are functional cell states within a cell-type.
+Recently single-cell sequencing studies have shown the substantial variability in gene expression exists amongst different cell types. However, these studies have also shown that there is variability between cells of the same cell type. It is not well understood what are the sources of this variability. We need to understand if this variability is due to neutral drift in gene expression or if there are functional cell states within a cell-type.
 
-- Talk about the Rickard sandberg paper
-- talk about TRIP
+A recent study used single-cell RNA-seqeuencing to estimate the burst frequency and burst size of about 7000 genes genome-wide \cite{larrson}. This study used Smart-seq2 technology which provides coverage across the transcript and shows a reduced 3' bias compared to alternative technologies such as 10X. \cite{source} The authors estimated the average waiting time for a transcriptional burst of a gene is 4 hours though a smaller fraction of genes had waiting times of greater than 20 hours for a burst. Smaller genes have higher burst size, and the authors suggest this is expected for housekeeping genes which are usually compact and consistently expressed in most tissues. Genes with TATA elements also have a higher burst size. By applying their method to a different cell types the authors show that many DE genes show a difference in burst frequency between cell-types. The difference in burst frequency also correlates with histone marks that mark enhancer activity. The authors conclude that core promoter elements play a major role in determining burst size and enhancer elements determine burst frequencies and that cell-type specific gene expression is determined by changes in burst frequencies. This sort of genome-wide study of transcriptional kinetics can be enabled by single-cell RNA sequencing and provide a supplement to more focused, less noisy assays looking at transcription of a single reporter gene. As the capture technology for scRNA-seq improves we will get better estimates of genome-wide transcriptional kinetics and how they change across different dimensions, for example with genetic background or with age or with disease.
+
+
+
+\section{ Noise can  be biological or technical }
 
 \section{Genetic control of noise}
 
@@ -109,12 +110,11 @@ Recently single-cell sequencing studies have established that substantial variab
 An important question that still remains to be answered is are the mean and noise controlled by different genetic regulatory elements.
 We have made a lot of progress in identifying loci that are associated with the mean level of expression \cite{gtex_consortium_genetic_2017} \cite{eqtlgen} \cite{more}. These studies have identified eQTLs for almost every gene in the genome \cite{} About half of all GWAS hits can now be mapped to eQTLs \cite{}. However this only looks at the mean level of expression. Could a similar approach be used to find loci that find variance QTLs?
 
-Studies have looked explicitly for variance QTLs. Sarkar et al. tried to find variance QTLs using the well characterized YRI cell lines from the HapMap project \cite{hapmap}. Briefly, they collected single-cell RNA-sequencing data from N individuals using 10X. Then they fit a negative binomial to each gene and came up with a noise measure for each gene. Since they also had genotype information for each of these individuals they looked for varaince QTLs. What di they find? They found all variance QTLs were also mean QTLs. THey concluded that their sample size was too small and that they would need n number of samples to find variance QTLs at X\% power. This study provided some methodological innovations despite being a negative result. There has been one other study that has used a simlar approach.
+Studies have looked explicitly for variance QTLs. Sarkar et al. tried to find variance QTLs using the well characterized YRI cell lines(n = 53) from the HapMap project \cite{hapmap}. Briefly, they collected single-cell RNA-sequencing data from N individuals using 10X. Then they fit a negative binomial to each gene and came up with a noise measure for each gene. Since they also had genotype information for each of these individuals they looked for variance QTLs. What di they find? They found all variance QTLs were also mean QTLs. THey concluded that their sample size was too small and that they would need around 4000 number of samples to find the strongest mean independent variance QTLs at 80\% power. This study provided some methodological innovations despite being a negative result. There has been one other study that has used a simlar approach to find variance QTLs. Francesca et al. used 10X scRNA-seq data from X sampels and attempted to find QTLs. They found...
 
-Prior to the publication of the study by Sarkar et al. I also looked at the single-cell data from their group through a collaboration with their group. I looked at cell-to-cell variability using different approaches. My variance QTL analysis also detected variance QTLs that were explained entirely by mean QTLs. I also looked at every gene's expression for every individual, and tried to find genes whose variance in gene expression was disproportionate to their mean levels. I found a set of genes that had abnovmal variance (shown in red in \fref{fig:intro_figure1}). However upon closer inspection, many of the genes that displayed this property were enriched for Mitochondrial genes. It is a known observation in single-cell 
-RNA sequencing that cells that are prone to dying exhibit higher levels of mitochondrial transcripts \cite {seurat}, hence we did not follow up on this finding.
+Prior to the publication of the study by Sarkar et al. I also looked at the single-cell data from their group through a collaboration with their group. I looked at cell-to-cell variability using different approaches. My variance QTL analysis also detected variance QTLs that were explained entirely by mean QTLs. I also looked at every gene's expression for every individual, and tried to find genes whose variance in gene expression was disproportionate to their mean levels. I found a set of genes that had variance above expectation consistently in many individuals (shown in red in \cite{fig:intro_figure1}). Upon closer inspection, many of the genes that displayed this property were enriched for Mitochondrial genes. We hypothesized that mitochondrial genes might have increased variability for some functional reason. However, it is a known observation in single-cell RNA sequencing that cells that are unhealthy or dying exhibit higher levels of mitochondrial transcripts \cite {seurat}, hence we did not follow up on this observation. We also used this data to look pathway specific gnees that displayed abnormal levels of variability. However, I did not find any pathways that displayed this property. Like Sarkar et al. I attribute this partly to higher technical noise of single-cell RNA sequencing as well as lower power to detect real effects due to the relatively small sample size.
 
-Francesca et al. used 10X scRNA-seq data from X sampels and attempted to find QTLs. They found. 
+ 
 
 
 \section{Selection on noise levels}
@@ -129,9 +129,12 @@ Batada et al. \cite{Batada} asked whether genes that are essential are in region
 
 Metzger et al. \cite{Metzger} have looked at the promoter of a yeast enzyme that is involved in glucose metabolism in multiple yeast species. They looked at both polymorphisms that have fixed after undergoing selection through time and new mutations, induced through mutagenesis, which have not yet undergone seleection. They find that the polymorphisms have a slightly smaller effect size on the noise level compared to new mutations, suggesting the action of selection in removing some of the noise affecting polymorphisms in the TDH3 promoter. Naturally occuring haplotypes show lower amounts noise than what would be expected under neutral evolution.
 
-The studies cited in this section have looked for signatures of selection acting specifically on the noise level. However for some of these studies it is impossible to attribute this signal entirely to the variability, and not to the mean. Indeed, most of these studies don't rule out alternative explanations for the signals of selection that are observed in the discussion sections.
+The studies cited in this section have looked for signatures of selection acting specifically on the noise level. However for some of these studies it has been hard to attribute this signal entirely to the variability, and not to the mean level of expression. Indeed, most of these studies don't rule out alternative explanations for the signals of selection that are observed in the discussion sections.
 
 \section{Noise in transcription factors}
+- talk about Wernet2006
+- Talk about greenwald
+- talk about Sui HUang
 
 %figure1
 \begin{figure}[t!]  
@@ -145,16 +148,34 @@ The studies cited in this section have looked for signatures of selection acting
     \label{fig:gfpXdensity}
 \end{figure}
 
-It remains to be well understood how the noise in the upstream regulators of a pathway propagates through a pathway. Chang et al. \cite {sui_huang} showed that the variation in the transcription factor \emph{Sca1}  can have an effect on which way a cell differentiates.
+
+Chang et al. \cite {sui_huang} showed that the variation in the transcription factor \emph{Sca1}  can have an effect on which way a cell differentiates.
 
 
 \section{Sources of noise}
 
-\subsection{Effect of chromatin on mean and noise}
+\subsection{Studies assaying transcription of the same reporter gene across the genome}
 
-\subsection{Effect of sequence features on noise}
+Several studies have looked at the effect of genomic location by integrating the same reporter gene in multiple locations. These sutudies used sequencing, time-lapse microscopy and flow cytometry approaches to look at bulk RNA and single-cell protein levels in cells. Our approach in Chapter 3 uses a similar integration strategy to look at RNA levels in single-cells to uncover the effects of cellular and genomic environment on gene expression noise.
 
-\subsection{ Is the variability shared between genes in the same pathway}
+Akhtar et al. \cite {Akhtar} integrated the same reporter gene in roughly 30000 locations along the mouse genome in ES cells by devising a barcode based technology called Thousands of Reporters in Parallel (TRIP). They measured the mean level of RNA expression of the reporter by using bulk RNA sequencing. The expression levels of the reporter genes vary more than 1000-fold in these locations. Nearby locations are correlated in terms of their expression and the authors used a HMM to separate the genome into permissive and non permissive domains. The non-permissive domains overlap with lamina associated domains and late-replicating domains. Permissive IR domains coincide with gene-dense and active regions. The integration locations that are promixal to genes are 10-fold more active than those located far from genes. Our technology in Chapter 3 is highly inspired by the TRIP method of Akhtar et al. The first part of our experimental pipeline is derived from the protocols of Akhtar et al. We wanted to extend TRIP to look at the factors underlying the variance of a reporter gene and not just the mean.
+
+Dar et al. \cite{Dar} did a genome-wide study of burst frequency and burst size by using time-lapse fluorescence mircoscopy at 8,000 loci. The authors use autocorrelation time of the fluctuations as a third axis, apart from mean and noise, to understand the dynamics at different loci. The third dimension allows the authors to constrain the two-state model. They used HIV-1 lentivirus to integrate GFP driven by three different promoters. They find that bursty transcription predominates over consitutive transcription genome-wide. Both burst size and burst frequency vary in equal measure across the genome. Weaker loci modulate the burst frequency to increase expression, whereas after a certain level of expression is reached burst size is modulated to increase expression. They perturbed transcription at this loci using histone deacetylase inhibutors. They find that both burst frequency and burst size increase with increasing expression. 
+
+Dey et al. \cite{Dey} used a lentiviral approach to integrate reporter genes at hundreds of promoters. Their approach used a dual reporter system to quantify the GFP reporter by flow-cytometry and the RNA levels by smFISH. They also assayed chromatin accessibility at the integration sites and found that higher noise locations are enriched for inaccessible chromatin. They also fit a two-state stochastic model to the data and found that the burst size determines the RNA mean while the promoter On rate influences the noise. This approach by Dey et al. provided a lot of insight, however multiple clones had to be measured individually as a result chromatin analysis was done on a small set of locations and the locations used in this study were not mapped. A high-throughput approach that allows for potential mapping of thousands of locations would provide more fine-grained insights.
+
+
+While all three prior approaches described above furthered our understanding of how mean RNA expression and noise at the protein level changed with genomic locations, there are still some unanswered questions. Can we understand the noise at the RNA level in more locations? How does the cell-state of a cell influence the gene expression noise?
+
+
+\subsection{Effect of cell state on noise}
+- include Roy Wollman's paper on cell state effect. 
+
+- Says that the cell-state explains most of the variance. Things like volume, differntiation state, cell cycle, amount and timing of Ca+2 activation.
+Variability and memory of protein levels in human cells - this argues that genes in the same pathway share variability. After removal of cell-state the leftover noise is Poissonian
+
+
+\subsection{ How does noise propagate within a network}
 
 %figure1
 \begin{figure}[t!]  
@@ -163,7 +184,7 @@ It remains to be well understood how the noise in the upstream regulators of a p
     \includegraphics[width=\linewidth, scale=0.5]{figures/intro/intro_clustering_expectedresults.pdf}
     \caption[]{%
         \textbf{}
-        \subref{fig:intro_figure3}     
+        \subref{fig:intro_figure3a}     
     }
     \label{fig:aim1_task1}
 \end{figure}
@@ -174,17 +195,38 @@ It remains to be well understood how the noise in the upstream regulators of a p
 \begin{figure}[t!]  
     \centering
     \phantomlabel{fig:intro_figure4a}
-    \includegraphics[width=\linewidth]{figures/intro/intro_tdh2_clustering_observed.pdf}
+    \includegraphics[width=\linewidth]{figures/intro/intro_tdh2_facs.png}
     \caption[]{%
         \textbf{}
         \subref{fig:intro_figure4a}
     }
     \label{fig:tdh2_pca}
 \end{figure}
-Talk about your TDH3 results here. Also setup for the cell-state story of CAS.
 
-\section{Recent developments in the noise field}
 
+%figure1
+\begin{figure}[t!]  
+    \centering
+    \phantomlabel{fig:intro_figure5a}
+    \includegraphics[width=\linewidth]{figures/intro/intro_tdh2_clustering_timepoints.pdf}
+    \caption[]{%
+        \textbf{}
+        \subref{fig:intro_figure5a}
+    }
+    \label{fig:tdh2_pca}
+\end{figure}
+
+Gene expression noise can be decomposed into two components intrinsic and extrinsic noise. \cite{elowitz} \cite{oshea}. Intrinsic noise is more local to a given gene, and reflects the local biochemical fluctuations at the gene - for example the dynamics of enhancers contacting the promoters, transcription factors binding at cis-regulatory elements etc. Extrinsic noise reflects global cell-to-cell differences such as cell-cycle, cell-size and affects many genes within a cell. It is still unclear what are the different levels at which extrinsic noise can act. For example can extrinsic noise act at the level of pathways?
+
+One of the questions that I asked early in my thesis work was whether the noise in an upstream regulator of a pathway propagates within it's network. The way I tested this was by using one of the GFP-tagged yeast strain for the gene TDH2 from Newman et al.\cite{Newman}. TDH2 is an enzyme that plays a role in the glycolysis pathway. We hypothesized that levels of this enzyme in a given yeast might manifest as differences in the transcriptomes between yeast and possibly phenotypic differences between yeast. If the noise in TDH2 propagated downstream to the other genes in the pathway then we would be able to see differences in the target genes. 
+
+I sorted out three populations of cells as shown in \cite{Figure_sorter}. One population expressed TDH3 at a relatively high level, marked by high levels of GFP, another population at a lower level, and another population at an intermediate level between the high and low levels.  I sorted these two populations into three separate vials, extracted RNA from the three populations and measured the transcriptomes using RNA-seq.
+
+What might we expect from the transcriptomes obtained from an experiment. There are three posibble outcomes if we use a clustering analysis like PCA. If the levels of the enzyme did not result in any distinct transcriptional changes, and by extension phenotypic differences amongst populations, then we would expect the transcriptomes from the high, low and medium populations to overlap. If the high and low levels of the enzyme result in distinct transcriptional states, due to upregulation of the pathway in the high cells, we would expect to see the results in \cite{Figure 1B} where the high, low and medium levels of TDH2 result in distinct transcriptional states that cluster separately. This is similar to what Chang et al see in embryonic stem cells with different levels of Sca1 \cite{sui-huang}. If the experiment-to-experiment variability and batch effects of the experiment dominate the within day variability then we would expect to see the results in \cite{Figure 1C} where the samples cluster by replicate i.e the day of the experiment. This framework helps us look at the observed data.
+
+We counted the transcripts for every expressed gene and performed a PCA analysis on the tnormalized transcript counts. These results are seen in \cite{FigurePCA} The transcriptomes separated out by the day of experiment along PC1. Furthermore, when we looked at individual transcript changes between high and low populations there were very few differentially expressed genes. This result looks like our expected result in \cite{Figure 1C}. The variability between replicates is higher than the variability within a replicate. Since there were so few differentially expressed genes between teh high and low populations we didn't find any pathway related differences between these populations as well.
+
+While this early experiment of mine was largely a negative result I was still able to get started and thinking about transcriptional variability and its possible functional effects. This experiment was technically challenging since large number of yeast had to be sorted in order to obtain enough RNA for library construction. We had to ensure that the yeast were processed in such a way as to not allow for transcriptional changes after sorting which would remove any real transcriptional differences between the high and low cells. The lessons learnt from this experiment better prepared me for the experiments in Chapter 2 and also inspired me to look for the effect of cell-state on gene expression noise in Chapter 3.
 
 \section{Scope of thesis work}
 
