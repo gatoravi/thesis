@@ -5,6 +5,8 @@ thesis.pdf
 figures/cas/Prepared figures/
 figures/hedgehog/hh_figure4.pdf
 
+*.jpg
+*.docx
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
