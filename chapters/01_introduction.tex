@@ -51,15 +51,12 @@ A recent study used single-cell RNA-seqeuencing to estimate the burst frequency 
 %figure1
 \begin{figure}[t!]  
     \centering
-    \phantomlabel{fig:intro_figure1a}
     \includegraphics[width=\linewidth, scale=0.25]{figures/intro/intro_outlier1.png}
-    \caption[]{%
-        \textbf{}
-        \subref{fig:intro_figure1a}
-        Schematic for expression change detection in the transcriptome data.
-     
+    \caption[Distribution of a Transcription Factor across cells.]{%
+        \textbf{Distribution of a Transcription Factor across cells}
+        The protein levels of any given transcription factor is a distribution across cells. Some cells have high amounts of the protein, some have intermediate levels, and some cells have lower amounts of the protein.
     }
-    \label{fig:outliervariance}
+    \label{fig:intro1}
 \end{figure}
 
 An important question that still remains to be answered is are the mean and noise controlled by different genetic regulatory elements.
@@ -67,7 +64,7 @@ We have made a lot of progress in identifying loci that are associated with the 
 
 Studies have looked explicitly for variance QTLs. Sarkar et al. tried to find variance QTLs using the well characterized YRI cell lines(n = 53) from the HapMap project \cite{hapmap}. Briefly, they collected single-cell RNA-sequencing data from N individuals using 10X. Then they fit a negative binomial to each gene and came up with a noise measure for each gene. Since they also had genotype information for each of these individuals they looked for variance QTLs. What di they find? They found all variance QTLs were also mean QTLs. THey concluded that their sample size was too small and that they would need around 4000 number of samples to find the strongest mean independent variance QTLs at 80\% power. This study provided some methodological innovations despite being a negative result. There has been one other study that has used a simlar approach to find variance QTLs. Francesca et al. used 10X scRNA-seq data from X sampels and attempted to find QTLs. They found...
 
-Prior to the publication of the study by Sarkar et al. I also looked at the single-cell data from their group through a collaboration with their group. I looked at cell-to-cell variability using different approaches. My variance QTL analysis also detected variance QTLs that were explained entirely by mean QTLs. I also looked at every gene's expression for every individual, and tried to find genes whose variance in gene expression was disproportionate to their mean levels. I found a set of genes that had variance above expectation consistently in many individuals (shown in red in \cite{fig:intro_figure1}). Upon closer inspection, many of the genes that displayed this property were enriched for Mitochondrial genes. We hypothesized that mitochondrial genes might have increased variability for some functional reason. However, it is a known observation in single-cell RNA sequencing that cells that are unhealthy or dying exhibit higher levels of mitochondrial transcripts \cite {seurat}, hence we did not follow up on this observation. We also used this data to look pathway specific gnees that displayed abnormal levels of variability. However, I did not find any pathways that displayed this property. Like Sarkar et al. I attribute this partly to higher technical noise of single-cell RNA sequencing as well as lower power to detect real effects due to the relatively small sample size.
+Prior to the publication of the study by Sarkar et al. I also looked at the single-cell data from their group through a collaboration with their group. I looked at cell-to-cell variability using different approaches. My variance QTL analysis also detected variance QTLs that were explained entirely by mean QTLs. I also looked at every gene's expression for every individual, and tried to find genes whose variance in gene expression was disproportionate to their mean levels. I found a set of genes that had variance above expectation consistently in many individuals (shown in red in \fref{fig:intro1}). Upon closer inspection, many of the genes that displayed this property were enriched for Mitochondrial genes. We hypothesized that mitochondrial genes might have increased variability for some functional reason. However, it is a known observation in single-cell RNA sequencing that cells that are unhealthy or dying exhibit higher levels of mitochondrial transcripts \cite {seurat}, hence we did not follow up on this observation. We also used this data to look pathway specific gnees that displayed abnormal levels of variability. However, I did not find any pathways that displayed this property. Like Sarkar et al. I attribute this partly to higher technical noise of single-cell RNA sequencing as well as lower power to detect real effects due to the relatively small sample size.
 
 \section{Selection on noise levels}
 
@@ -88,22 +85,21 @@ The studies cited in this section have looked for signatures of selection acting
 %figure1
 \begin{figure}[t!]  
     \centering
-    \phantomlabel{fig:intro_figure2a}
     \includegraphics[width=\linewidth, scale=0.25]{figures/intro/intro_gfp_density_X.pdf}
     \caption[Distribution of Transcription Factor across cells.]{%
         \textbf{Distribution of Transcription Factor across cells}
-        \subref{fig:intro_figure2a}
+        caption goes here
     }
-    \label{fig:gfpXdensity}
+    \label{fig:intro2}
 \end{figure}
 
-Consider the distribution in expression of a single transcription factor protein as shown in figure \cite{fig:gfpXdensity}. Transcription factors play vital roles in development and disease, and can convert between cell-types. \cite {Tim Hughes}. Could it then be that a cell that expresses high amounts of a transcription factor behave differently from another cell with an identical genome and growing in essentially identical environment but expressing lower amounts of the same transcription factor? Indeed, several studies have shown this to be the case across different organisms.
+Consider the distribution in expression of a single transcription factor protein as shown in figure \fref{fig:intro2}. Transcription factors play vital roles in development and disease, and can convert between cell-types. \cite {Tim Hughes}. Could it then be that a cell that expresses high amounts of a transcription factor behave differently from another cell with an identical genome and growing in essentially identical environment but expressing lower amounts of the same transcription factor? Indeed, several studies have shown this to be the case across different organisms.
 
 Wernet et al. \cite{Wernet} examined the cell-fate choice in the Drosophila photorecptor cells. The drosophila eye consists of optical units called ommatidia which choose between two subtypes pale and yellow which is determined by the pairs of rhodopsin genes expressed in them. How this fate is chosen amongst genetically identical cells had been a fascinating question. The authors of this paper showed that the expression of a single transcription factor spineless is necessary and sufficient to specify the mosaic cell-fate in the Drosophila eye. Spineless is stochastically expressed in a majority of the cells which then adopt the yellow subtype. The knockout of Spineless results in all of the ommatidia adopting the blue subtype. Overexpressing spineless results in all of the ommatidia adopting the yellow subtype. This fascinating and crucial development process is thus controlled by the stochastic expression of a single transcription factor.
 
 In \emph{C. elegans} somatic primordium four cell have the potential to be the Anchor cell (AC) which is an important cell in the gonads. \cite{Attner}. How only one of these four cells becomes the AC is determined by the the transcription factor HLH-2. The rest of the four cells become the ventral uterine precursor cells (VU) cells. The relative timing of the expression transcription factor influences cell-fate in this system. The parent that expresses HLH-2 first results in the daughter becoming the VU cell. This onset of expression is also linked to the birth order of the parent cells, the parent cell that is born first also expresses HLH-2 first and adopts the VU fate. However when the birth order difference is  relatively short, the AC/VU decision appears to be random. This system is different from the previous study since it is stochastic while also being deterministic in that there is always only one AC cell, and this is determined by the birth order of the ancestor cells. The authors speculate that other stochastic outcomes might be resolved by finding other such deterministic elements. 
 
-In Bacteria, Maamar et al.  \cite{Maamar} examined the emergence of the transient state of competence that enables a bacterium to uptake DNA from the environment. They showed that the noise in comK the master regulator of the competence pathway involving autorogelation. This autoregulation results in bistability where in one state comK expression is low, and in the other state the comK expression is higher than a critical threshold and enables the bacterium to become competent. They show that the noise in comK is mostly intrinsic.
+In Bacteria, Maamar et al. \cite{Maamar} examined the emergence of the transient state of competence that enables a bacterium to uptake DNA from the environment. They showed that the noise in comK the master regulator of the competence pathway involving autorogelation. This autoregulation results in bistability where in one state comK expression is low, and in the other state the comK expression is higher than a critical threshold and enables the bacterium to become competent. They show that the noise in comK is mostly intrinsic.
 
 In this section we have seen several examples across species how the cell-to-cell variability of a single transcription factor can result in important functional differences between cells. An important follow-up question that emerges from this observation is what determines the noise levels of a certain gene? While the actual regulatory mechanisms can vary a lot between genes, certain general mechanisms of transcription can be examined for their impact on noise.
 
@@ -133,54 +129,49 @@ Topoloweski et al. \cite{Topolweski} looked at cell-to-cell heterogeneity in the
 
 \subsection{ How does noise propagate within a network}
 
-%figure1
-\begin{figure}[t!]  
-    \centering
-    \phantomlabel{fig:intro_figure3a}
-    \includegraphics[width=\linewidth, scale=0.5]{figures/intro/intro_clustering_expectedresults.pdf}
-    \caption[]{%
-        \textbf{}
-        \subref{fig:intro_figure3a}     
-    }
-    \label{fig:aim1_task1}
-\end{figure}
-
-
-
-%figure1
-\begin{figure}[t!]  
-    \centering
-    \phantomlabel{fig:intro_figure4a}
-    \includegraphics[width=\linewidth]{figures/intro/intro_tdh2_facs.png}
-    \caption[]{%
-        \textbf{}
-        \subref{fig:intro_figure4a}
-    }
-    \label{fig:tdh2_pca}
-\end{figure}
-
-
-%figure1
-\begin{figure}[t!]  
-    \centering
-    \phantomlabel{fig:intro_figure5a}
-    \includegraphics[width=\linewidth, scale=0.5]{figures/intro/intro_tdh2_clustering_timepoints.pdf}
-    \caption[]{%
-        \textbf{}
-        \subref{fig:intro_figure5a}
-    }
-    \label{fig:tdh2_pca}
-\end{figure}
 
 Gene expression noise can be decomposed into two components intrinsic and extrinsic noise. \cite{elowitz} \cite{oshea}. Intrinsic noise is more local to a given gene, and reflects the local biochemical fluctuations at the gene - for example the dynamics of enhancers contacting the promoters, transcription factors binding at cis-regulatory elements etc. Extrinsic noise reflects global cell-to-cell differences such as cell-cycle, cell-size and affects many genes within a cell. It is still unclear what are the different levels at which extrinsic noise can act. For example can extrinsic noise act at the level of pathways?
 
 One of the questions that I asked early in my thesis work was whether the noise in an upstream regulator of a pathway propagates within it's network. The way I tested this was by using one of the GFP-tagged yeast strain for the gene TDH2 from Newman et al.\cite{Newman}. TDH2 is an enzyme that plays a role in the glycolysis pathway. We hypothesized that levels of this enzyme in a given yeast might manifest as differences in the transcriptomes between yeast and possibly phenotypic differences between yeast. If the noise in TDH2 propagated downstream to the other genes in the pathway then we would be able to see differences in the target genes. 
 
-I sorted out three populations of cells as shown in \cite{Figure_sorter}. One population expressed TDH3 at a relatively high level, marked by high levels of GFP, another population at a lower level, and another population at an intermediate level between the high and low levels.  I sorted these two populations into three separate vials, extracted RNA from the three populations and measured the transcriptomes using RNA-seq.
+\begin{figure}[t!]  
+    \centering
+    \includegraphics[width=\linewidth]{figures/intro/intro_tdh2_facs.png}
+    \caption[Representative sort results of TDH2]{%
+        \textbf{Representative sort results of TDH2}
+        Yeast with GFP-tagged TDH2 were grown out and sorted on a flow sorter. Three populations of yeast with relative high, medium and low amounts of TDH2-GFP were sorted into individual tubes.
+    }
+    \label{fig:intro3}
+\end{figure}
 
-What might we expect from the transcriptomes obtained from an experiment. There are three posibble outcomes if we use a clustering analysis like PCA. If the levels of the enzyme did not result in any distinct transcriptional changes, and by extension phenotypic differences amongst populations, then we would expect the transcriptomes from the high, low and medium populations to overlap. If the high and low levels of the enzyme result in distinct transcriptional states, due to upregulation of the pathway in the high cells, we would expect to see the results in \cite{Figure 1B} where the high, low and medium levels of TDH2 result in distinct transcriptional states that cluster separately. This is similar to what Chang et al see in embryonic stem cells with different levels of Sca1 \cite{sui-huang}. If the experiment-to-experiment variability and batch effects of the experiment dominate the within day variability then we would expect to see the results in \cite{Figure 1C} where the samples cluster by replicate i.e the day of the experiment. This framework helps us look at the observed data.
+I sorted out three populations of cells as shown in \fref{fig:intro3}. One population expressed TDH3 at a relatively high level, marked by high levels of GFP, another population at a lower level, and another population at an intermediate level between the high and low levels.  I sorted these two populations into three separate vials, extracted RNA from the three populations and measured the transcriptomes using RNA-seq.
 
-We counted the transcripts for every expressed gene and performed a PCA analysis on the tnormalized transcript counts. These results are seen in \cite{FigurePCA} The transcriptomes separated out by the day of experiment along PC1. Furthermore, when we looked at individual transcript changes between high and low populations there were very few differentially expressed genes. This result looks like our expected result in \cite{Figure 1C}. The variability between replicates is higher than the variability within a replicate. Since there were so few differentially expressed genes between teh high and low populations we didn't find any pathway related differences between these populations as well.
+\begin{figure}[t!]  
+    \centering
+    \phantomlabel{fig:intro4a}
+    \phantomlabel{fig:intro4b}
+    \phantomlabel{fig:intro4c}
+    \includegraphics[width=\linewidth, scale=0.5]{figures/intro/intro_clustering_expectedresults.pdf}
+    \caption[Expected results from sorting out populations with high, low and medium levels of a protein as in \fref{fig:intro2]{%
+        \textbf{Expected results from sorting out populations with high, low and medium levels of a protein as in \fref{fig:intro2}}
+        A) The transcriptomes don't show any discernible pattern. B) The transcriptomes separate out by the levels of the sorted protein. C) The transcriptomes separate out by a technical factor like batch.
+    }
+    \label{fig:intro4}
+\end{figure}
+
+What might we expect from the transcriptomes obtained from an experiment. There are three posibble outcomes if we use a clustering analysis like PCA. If the levels of the enzyme did not result in any distinct transcriptional changes, and by extension phenotypic differences amongst populations, then we would expect the transcriptomes from the high, low and medium populations to overlap as seen in Figure \fref{fig:intro4a}. If the high and low levels of the enzyme result in distinct transcriptional states, due to upregulation of the pathway in the high cells, we would expect to see the results in Figure \fref{fig:intro4b} where the high, low and medium levels of TDH2 result in distinct transcriptional states that cluster separately. This is similar to what Chang et al see in embryonic stem cells with different levels of Sca1 \cite{sui-huang}. If the experiment-to-experiment variability and batch effects of the experiment dominate the within day variability then we would expect to see the results in Figure \fref{fig:intro4c} where the samples cluster by replicate i.e the day of the experiment. This framework helps us look at the observed data.
+
+\begin{figure}[t!]  
+    \centering
+    \includegraphics[width=\linewidth, scale=0.5]{figures/intro/intro_tdh2_clustering_timepoints.pdf}
+    \caption[Transcriptomes of yeast don't separate out by TDH2 levels]{%
+     	\textbf{Transcriptomes of yeast don't separate out by TDH2 levels}
+     	We sorted out populations of yeast with high, low and medium levels of TDH2 (3 technical replicates each) as shown in \fref{fig:intro3}. We then extracted RNA and performed RNA-seq. We used PCA to visualize the transcriptomes and find that they don't separate out by the sorted TDH2 levels.
+    }
+    \label{fig:intro5}
+\end{figure}
+
+We counted the transcripts for every expressed gene and performed a PCA analysis on the tnormalized transcript counts. These results are seen in \fref{fig:intro5} The transcriptomes separated out by the day of experiment along PC1. Furthermore, when we looked at individual transcript changes between high and low populations there were very few differentially expressed genes. This result looks like our expected result in \fref{fig:intro4c}. The variability between replicates is higher than the variability within a replicate. Since there were so few differentially expressed genes between teh high and low populations we didn't find any pathway related differences between these populations as well.
 
 While this early experiment of mine was largely a negative result I was still able to get started and thinking about transcriptional variability and its possible functional effects. This experiment was technically challenging since large number of yeast had to be sorted in order to obtain enough RNA for library construction. We had to ensure that the yeast were processed in such a way as to not allow for transcriptional changes after sorting which would remove any real transcriptional differences between the high and low cells. The lessons learnt from this experiment better prepared me for the experiments in Chapter 2 and also inspired me to look for the effect of cell-state on gene expression noise in Chapter 3.
 
