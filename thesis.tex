@@ -21,6 +21,7 @@
 % Tweak LaTeX line breaking
 \midsloppy
 
+\usepackage{pdfpages}
 % Hyperlinks
 \usepackage{hyperref}
 \hypersetup{%
@@ -182,5 +183,9 @@
 
 \appendix
 \include{chapters/05_appendix}
+
+\appendix
+\include{chapters/06_aramu_cv}
+%\includepdf[pages=-,pagecommand={\section{title}}]{aramu_cv.pdf}
 
 \end{document}
