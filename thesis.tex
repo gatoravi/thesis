@@ -45,20 +45,24 @@
 \usepackage{graphicx}
 %forsuppfigure
 \usepackage{newfloat}
+
+
+\DeclareFloatingEnvironment[
+    name={Table},
+    %within=chapter,
+    %placement=tbhp,
+    fileext=lot,
+    listname={List of Supplementary Tables}
+]{supptable} % Set up supplementary table
+
 \DeclareFloatingEnvironment[
     fileext=lsf,
     name={Supplementary Figure},
     placement=tbhp,
     within=chapter,
     listname={List of Supplementary Figures}
-]{suppfigure}
-\DeclareFloatingEnvironment[
-    name={Supplementary Table},
-    within=chapter,
-    placement=tbhp,
-    fileext=lst,
-    listname={List of Supplementary Tables}
-]{supptable} % Set up supplementary table
+]{suppfigure} % Set up supplementary figure
+
 
 % Add newcommand to set up the numbering of supplementary figures and tables
 %\newcommand{\beginsupplement}{%
@@ -179,12 +183,12 @@
 \include{chapters/03_cas}
 \include{chapters/04_conclusion}
 
-\appendix
-\include{chapters/05_appendix}
-
 \begin{SingleSpace}
 \printbibliography
 \end{SingleSpace}
+
+\appendix
+\include{chapters/05_appendix}
 
 \chapter{CV}
 \includepdf[pages=-]{aramu_cv.pdf}

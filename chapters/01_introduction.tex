@@ -42,8 +42,8 @@ Another prominent example of functional effects of variability is the work by Ch
 \begin{figure}[t!]  
     \centering
     \includegraphics[width=\linewidth, scale=0.25]{figures/intro/intro_gfp_density_X.pdf}
-    \caption[Distribution of a hypothetical Transcription Factor X across cells.]{%
-        \textbf{Distribution of a Transcription Factor across cells}
+    \caption[Transcription factors display variable expression across a population of cells]{%
+        \textbf{Transcription factors display variable expression across a population of cells}
         The protein levels of any given transcription factor is observed as a distribution across cells. In a population of cells, some cells have relatively high amounts of the protein, some have intermediate levels, and some cells have lower amounts of the protein. Does this difference matter?
     }
     \label{fig:intro2}
@@ -75,8 +75,8 @@ One of the major issues plaguing single-cell RNA sequencing studies is the techn
 \begin{figure}[t!]  
     \centering
     \includegraphics[width=\linewidth, scale=0.25]{figures/intro/intro_outlier1.png}
-    \caption[RNAMean vs variance plot in a lymphoblastoid cell-line using single-cell RNA sequencing]{%
-        \textbf{RNAMean vs variance plot in a LCL cell-line using single-cell RNA sequencing}
+    \caption[Mean vs variance plot helps identifies genes that are outliers]{%
+        \textbf{Mean vs variance plot helps identifies genes that are outliers}
         Using single-cell RNA sequencing data from a YRI individual \cite{sarkar_discovery_2018} I plotted the mean and variance of all the genes. Shown in red are the genes that display a statistically enriched amount of variability than expected according to the mean level of expression. 
     }
     \label{fig:intro1}
@@ -133,8 +133,8 @@ One of the questions that I asked early in my thesis work was whether the noise 
 \begin{figure}[t!]  
     \centering
     \includegraphics[width=\linewidth]{figures/intro/intro_tdh2_facs.png}
-    \caption[Representative sort results of TDH2]{%
-        \textbf{Representative sort results of TDH2}
+    \caption[Isolation of yeast with different amounts of TDH2]{%
+        \textbf{[Isolation of yeast with different amounts of TDH2}
         Yeast with GFP-tagged copies of the gene TDH2 were grown out and sorted on a flow sorter. Three populations of yeast with relative high, medium and low amounts of TDH2-GFP were sorted into individual tubes.
     }
     \label{fig:intro3}
@@ -148,8 +148,8 @@ I sorted out three populations of cells as shown in \fref{fig:intro3}. One popul
     \phantomlabel{fig:intro4b}
     \phantomlabel{fig:intro4c}
     \includegraphics[width=\linewidth, scale=0.5]{figures/intro/intro_clustering_expectedresults.pdf}
-    \caption[Expected results from sorting out populations with high, low and medium levels of a protein as in \fref{fig:intro2}]{%
-        \textbf{Expected results from sorting out populations with high, low and medium levels of a protein as in \fref{fig:intro2}}
+    \caption[Expected results using transcriptomes from populations with high, low and medium levels of a protein]{%
+        \textbf{Expected results using transcriptomes from populations with high, low and medium levels of a protein}
         A) The transcriptomes don't show any discernible pattern. B) The transcriptomes separate out by the levels of the sorted protein. C) The transcriptomes separate out by a technical factor like batch.
     }
     \label{fig:intro4}
@@ -160,8 +160,8 @@ What might we expect from the transcriptomes obtained from an experiment like th
 \begin{figure}[t!]  
     \centering
     \includegraphics[width=\linewidth, scale=0.5]{figures/intro/intro_tdh2_clustering_timepoints.pdf}
-    \caption[Transcriptomes of yeast don't separate out by TDH2 levels]{%
-     	\textbf{Transcriptomes of yeast don't separate out by TDH2 levels}
+    \caption[Technical variability is greater than biological variability]{%
+     	\textbf{Technical variability is greater than biological variability}
      	We sorted out populations of yeast with high, low and medium levels of TDH2 (3 technical replicates each) as shown in \fref{fig:intro3}. We then extracted RNA and performed RNA-seq. We used PCA to visualize the transcriptomes and find that they don't separate out by the sorted TDH2 levels.
     }
     \label{fig:intro5}

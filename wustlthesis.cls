@@ -114,16 +114,16 @@
 
 % ---- List of figures (LoF), and list of tables (LoT) -----------------------
 \addtodef{\listoffigures}{\clearpage}{}
-\renewcommand*{\cftfigurename}{\figurename}
-\renewcommand*{\cftfigurepresnum}{\ }
-\renewcommand*{\cftfigureaftersnum}{:}
+%\renewcommand*{\cftfigurename}{\figurename}
+%\renewcommand*{\cftfigurepresnum}{\ }
+%\renewcommand*{\cftfigureaftersnum}{:}
 \setlength{\cftbeforefigureskip}{6pt plus 1pt minus 1pt}
 \cftsetindents{figure}{0em}{2.5em}
 
 \addtodef{\listoftables}{\clearpage}{}
-\renewcommand*{\cfttablename}{\tablename}
-\renewcommand*{\cfttablepresnum}{\ }
-\renewcommand*{\cfttableaftersnum}{:}
+%\renewcommand*{\cfttablename}{\tablename}
+%\renewcommand*{\cfttablepresnum}{\ }
+%\renewcommand*{\cfttableaftersnum}{:}
 \cftsetindents{table}{0em}{2.5em}
 \setlength{\cftbeforetableskip}{6pt plus 1pt minus 1pt}
 
