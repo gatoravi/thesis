@@ -8,6 +8,8 @@ figures/hedgehog/hh_figure4.pdf
 *.jpg
 *.docx
 ## Core latex/pdflatex auxiliary files:
+*lsf
+*lst
 *.aux
 *.lof
 *.log
