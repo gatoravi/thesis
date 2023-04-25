@@ -1,7 +1,7 @@
 ## Do not include build files
 *-concordance.tex
 other-theses/
-thesis.pdf
+*.pdf
 figures/cas/Prepared figures/
 figures/hedgehog/hh_figure4.pdf
 
